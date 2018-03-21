@@ -1,0 +1,111 @@
+
+
+
+<header id="header">
+  <div class="container-fluid">
+
+    <div id="logo" class="pull-left">
+      <h1 style="font-size: 25px"><a href="/home" class="scrollto" style="color:yellow">Kammavar USA</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+    </div>
+
+
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li ><a routerLink="/home" routerLinkActive="menu-active">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="menu-active">About Us</a></li>
+        <li><a routerLink="/service" routerLinkActive="menu-active">Services</a></li>
+        <li><a routerLink="/gallery" routerLinkActive="menu-active">Gallery</a></li>
+        <li class="menu-has-children"><a routerLink="/forums" routerLinkActive="menu-active">Forums</a>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Devotional</a></li>
+          </ul>
+        </li>
+        <li class="menu-has-children"><a href="">News/Events</a>
+          <ul>
+            <li><a href="#">E-Magazine</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">RSS Feeds</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/contact" routerLinkActive="menu-active">Contact US</a></li>
+        <li class="menu-has-children"><a href="">Members</a>
+          <ul>
+            <li><a href="#">Directory</a></li>
+            <li><a href="#">Refer a Member</a></li>
+          </ul>
+        </li>
+        <!--<li><a routerLink="/donation" routerLinkActive="menu-active">Donation</a></li>-->
+
+      </ul>
+    </nav><!-- #nav-menu-container -->
+  </div>
+</header><!-- #header -->
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 footer-info">
+          <h3>Kammavar USA</h3>
+          <p>Forum to connect tamilnadu based kammavar's in North America (United States and Canada).</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States <br>
+            <strong>Phone:</strong> +1 5589 55488 55<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+          <form action="" method="post">
+            <input type="email" name="email"><input type="submit"  value="Subscribe">
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+

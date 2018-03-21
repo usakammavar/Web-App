@@ -1,0 +1,73 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "kamma-website"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [
+        "../lib/jquery/jquery.min.js",
+        "../lib/jquery/jquery-migrate.min.js",
+        "../lib/bootstrap/js/bootstrap.bundle.min.js",
+        "../lib/easing/easing.min.js",
+        "../lib/superfish/superfish.min.js",
+        "../lib/superfish/hoverIntent.js",
+        "../lib/wow/wow.min.js",
+        "../lib/waypoints/waypoints.min.js",
+        "../lib/counterup/counterup.min.js",
+        "../lib/owlcarousel/owl.carousel.min.js",
+        "../lib/isotope/isotope.pkgd.min.js",
+        "../lib/lightbox/js/lightbox.min.js",
+        "../lib/touchSwipe/jquery.touchSwipe.min.js",
+        "../js/main.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json"
+    },
+    {
+      "project": "src/tsconfig.spec.json"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}
