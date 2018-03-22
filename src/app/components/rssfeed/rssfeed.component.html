@@ -1,0 +1,21 @@
+ <!--==========================
+      RSS Feed Section
+    ============================-->
+    <main id="main">
+      <div id="rssfeed" class="section-bg wow fadeInUp">
+          <div class="container">
+      
+            <div class="section-header">
+              <h3>News</h3>              
+            </div>
+            <div>
+                <button (click)="refreshFeed()" class="refresh-btn">Reload</button>
+            </div>
+            <div class="col-md-4">                
+                 <app-feed-card *ngFor="let feed of feeds" [feed]="feed" ></app-feed-card>
+            </div>
+
+          </div>
+            
+        </div><!-- #rssfeed -->
+    </main>

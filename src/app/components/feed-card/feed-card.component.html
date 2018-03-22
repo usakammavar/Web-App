@@ -1,0 +1,10 @@
+<div class="card-feed-entry" (click)="openLinkInBrowser()">
+  <table>
+      <th> {{feed.title}}  </th>
+    <tbody>      
+      <tr> <td> Last Updated: {{feed.author}} - {{feed.pubDate | date:'dd-MM-yyyy'}} </td></tr>
+      <tr> <td>{{feed.description | stripHtmlTags}} </td></tr>
+    </tbody> 
+  </table>
+  
+</div>

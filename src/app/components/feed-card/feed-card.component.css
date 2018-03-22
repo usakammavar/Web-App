@@ -1,0 +1,8 @@
+.card-feed-entry { 
+  border: 1px solid rgb(0, 0, 0);
+  cursor: pointer;
+  background-color:rgb(202, 189, 189);
+  color: black;
+  margin: 5px; 
+}
+

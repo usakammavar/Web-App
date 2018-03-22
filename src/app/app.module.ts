@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ROUTING } from './app.routing'
 import { APP_BASE_HREF } from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -13,6 +16,12 @@ import { ServiceComponent } from './components/service/service.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ForumsComponent } from './components/forums/forums.component';
 import { DonationComponent } from './components/donation/donation.component';
+import { RssfeedComponent } from './components/rssfeed/rssfeed.component';
+import { FeedCardComponent } from './components/feed-card/feed-card.component';
+import { NewsService } from './services/news.service';
+import { StripHtmlTagsPipe } from './components/pipe/strip-html-tags.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -24,13 +33,19 @@ import { DonationComponent } from './components/donation/donation.component';
     ServiceComponent,
     GalleryComponent,
     ForumsComponent,  
-    DonationComponent
+    DonationComponent, 
+    RssfeedComponent,
+    FeedCardComponent,
+    StripHtmlTagsPipe
+    
   ],
   imports: [
     BrowserModule,
-    ROUTING
+    ROUTING,
+    HttpModule
+ 
   ],
-  providers: [ {provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [ {provide: APP_BASE_HREF, useValue: '/' }, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

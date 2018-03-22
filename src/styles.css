@@ -1213,6 +1213,24 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #13a456;
 }
 
+/* RSS Feef Section
+--------------------------------*/
+#rssfeed {
+  padding: 100px 0;
+  background: #fff;
+}
+
+#rssfeed .rssfeed-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#rssfeed .rssfeed-news {
+  margin-bottom: 20px;
+}
+
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
