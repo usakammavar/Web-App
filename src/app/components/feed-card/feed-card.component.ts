@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './feed-card.component.html',
   styleUrls: ['./feed-card.component.css']
 })
+
 export class FeedCardComponent implements OnInit {
 
   @Input() feed: any;
@@ -17,4 +18,5 @@ export class FeedCardComponent implements OnInit {
   openLinkInBrowser() {
     window.open(this.feed.link);
   }
+
 }
