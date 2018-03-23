@@ -1,9 +1,14 @@
 .card-feed-entry { 
     border: 1px solid rgb(0, 0, 0);
     cursor: pointer;
-    background-color:rgb(202, 189, 189);
+    background-color:rgb(224, 220, 220);
     color: black;
     margin: 6px; 
+    display: table;
+    font-size: 14px;    
   }
+
+
+  
   
   

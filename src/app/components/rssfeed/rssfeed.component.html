@@ -11,9 +11,30 @@
             <div>
                 <button (click)="refreshFeed()" class="refresh-btn">Reload</button>
             </div>
-            <div class="col-md-4">                
-                 <app-feed-card *ngFor="let feed of feeds" [feed]="feed" ></app-feed-card>
+            <div class="row">                
+                <div class="col-md-4">    
+                  <app-feed-card *ngFor="let feed of feeds1" [feed]="feed" ></app-feed-card> 
+                </div> 
+                <div class="col-md-4">                
+                  <app-feed-card *ngFor="let feed of feeds2" [feed]="feed" ></app-feed-card>               
+                </div>
+                <div class="col-md-4">                
+                  <app-feed-card *ngFor="let feed of feeds3" [feed]="feed" ></app-feed-card>               
+                </div>                                               
             </div>
+            <div class="row">                
+                <div class="col-md-4">    
+                    <app-feed-card *ngFor="let feed of feeds4" [feed]="feed" ></app-feed-card> 
+                </div> 
+                <div class="col-md-4">                
+                    <app-feed-card *ngFor="let feed of feeds5" [feed]="feed" ></app-feed-card>               
+                </div>
+                <div class="col-md-4">                
+                    <app-feed-card *ngFor="let feed of feeds6" [feed]="feed" ></app-feed-card>               
+                </div>                                           
+             </div>
+            
+            
 
           </div>
             
