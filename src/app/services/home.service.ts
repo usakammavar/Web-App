@@ -22,6 +22,7 @@ export class HomeService {
 
   //this.headerOption= new RequestOptions({headers: headers});
   constructor(private http: HttpClient) { }
+  
 
   getHomeInfo(): Observable<any> {
     return this.http.get(this.apiPath + 'all' );

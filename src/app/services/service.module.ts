@@ -8,4 +8,6 @@ import {HomeService} from './home.service'
   providers: [HomeService],
   bootstrap: []
 })
+
 export class ServiceModule { }
+
