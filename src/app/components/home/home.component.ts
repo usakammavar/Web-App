@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.homeService.getHomeInfo().subscribe(
-      response => {
-    })
+  
   }
 
 
