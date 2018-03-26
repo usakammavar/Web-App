@@ -1213,6 +1213,24 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #13a456;
 }
 
+/* RSS Feed Section
+--------------------------------*/
+#rssfeed {
+  padding: 100px 0;
+  background: #fff;
+}
+
+#rssfeed .rssfeed-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#rssfeed .rssfeed-news {
+  margin-bottom: 20px;
+}
+
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1226,6 +1244,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #footer .footer-top {
   background: #111;
   padding: 60px 0 30px 0;
+  width:100%;
 }
 
 #footer .footer-top .footer-info {
