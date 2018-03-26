@@ -10,8 +10,8 @@ import { ForumsComponent } from './components/forums/forums.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DonationComponent } from './components/donation/donation.component';
 
-export const AppRoutes: Routes = [  
-    { path: '', component: HomeComponent },
+export const AppRoutes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'service', component: ServiceComponent },
@@ -19,7 +19,7 @@ export const AppRoutes: Routes = [
     { path: 'forums', component: ForumsComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'donation', component: DonationComponent }
-   
+
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);

@@ -14,6 +14,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ForumsComponent } from './components/forums/forums.component';
 import { DonationComponent } from './components/donation/donation.component';
 
+import {ServiceModule} from './services/service.module'
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +25,12 @@ import { DonationComponent } from './components/donation/donation.component';
     AboutComponent,
     ServiceComponent,
     GalleryComponent,
-    ForumsComponent,  
+    ForumsComponent,
     DonationComponent
   ],
   imports: [
+    ServiceModule,
+    HttpClientModule,
     BrowserModule,
     ROUTING
   ],

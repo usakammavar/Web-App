@@ -1,5 +1,5 @@
 #about {
-  /*background: url("assets/about-bg.jpg") center top no-repeat fixed;*/
+  /*background: url("../../../assets/about-bg.jpg") center top no-repeat fixed;*/
   /*background-color: #999999;*/
   background-color: white;
   background-size: cover;
@@ -35,10 +35,10 @@
 }
 
 #about .about-col {
-  /*background: #fff;*/
-  background: lightgray;
+  background: #fff;
+  /*background: lightgray;*/
   border-radius: 0 0 4px 4px;
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.40);
   margin-bottom: 20px;
 }
 
@@ -120,4 +120,7 @@
 p{
   color:yellow;
   padding-left:20vw;
+}
+li{
+  padding:10px;
 }
