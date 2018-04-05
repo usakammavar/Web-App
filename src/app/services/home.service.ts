@@ -22,9 +22,8 @@ export class HomeService {
 
   //this.headerOption= new RequestOptions({headers: headers});
   constructor(private http: HttpClient) { }
-  
 
   getHomeInfo(): Observable<any> {
-    return this.http.get(this.apiPath + 'all' );
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/1' );
   }
 }

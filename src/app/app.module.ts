@@ -20,6 +20,7 @@ import { StripHtmlTagsPipe } from './components/pipe/strip-html-tags.pipe';
 import { NewsService } from './services/news.service';
 import {ServiceModule} from './services/service.module'
 import {HttpClientModule} from '@angular/common/http'
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -42,7 +43,10 @@ import {HttpClientModule} from '@angular/common/http'
     HttpClientModule,
     HttpModule,
     BrowserModule,
-    ROUTING
+    ROUTING,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDokqdPtN0qfxs63GlfF-vSMUXIkSmCTK0'
+    })
   ],
   providers: [ {provide: APP_BASE_HREF, useValue: '/' }, NewsService],
   bootstrap: [AppComponent]

@@ -17,7 +17,7 @@
           </div>
         </div>
 
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
           <div class="carousel-background"><img src="assets/intro-carousel/2.jpeg" alt=""></div>
           <div class="carousel-container">
             <div class="carousel-content">
@@ -26,7 +26,7 @@
               <a href="#featured-services" class="btn-get-started scrollto">Join Us</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="carousel-item">
           <div class="carousel-background"><img src="assets/intro-carousel/3.jpeg" alt=""></div>
@@ -87,5 +87,30 @@
     <a class="cta-btn" href="#">Register</a>
   </div>
 </section><!-- #call-to-action -->
+<section id="intro">
+<div class="intro-container">
+<div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+<div class="carousel-inner" role="listbox">
 
+    <div class="carousel-item active">
+            <video autoplay loop id="video-background" muted plays-inline>
+                <source src="assets/homeVideo1.mp4" type="video/mp4">
+            </video>
+        <div class="carousel-container">
+          <div class="carousel-content">
+              <h2>Welcome to Kammavar USA</h2>
+              <p>Let us preserve and protect Tamil Kammavar Community Heritage and Culture for future generation.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- <video autoplay loop id="video-background" muted plays-inline>
+    <source src="assets/homeVideo1.mp4" type="video/mp4">
+</video> -->
+<agm-map [latitude]="lat" [longitude]="lng" >
+    <agm-marker [latitude]="lat" [longitude]="lng" [title]="title"></agm-marker>
+</agm-map>
 
