@@ -2,17 +2,31 @@
   <div id="about">
 
 
-    <header class="section-header">
+    <!-- <header class="section-header">
             <figure class="about-figure">
               <img src="../../../assets/about.jpg" class="img-responsive" alt="about">
-              <!-- <div class="centered">
-                <p style="font-size: 50px; font-weight: bold;">About Us</p>
-                <p style="font-weight: bold;">We connect Tamilnadu based Kammavar in North America (United States & Canada)</p>
-              </div> -->
             </figure>
-    </header>
+    </header> -->
+    <section id="intro">
+        <div class="intro-container">
+        <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div class="carousel-background"><img src="../../../assets/about.jpg" alt=""></div>
+                <div class="carousel-container">
+                  <div class="carousel-content">
+                    <h2>Kammavar USA</h2>
+                    <p>We connect Tamilnadu based kammavar people in North America and Canada</p>
+                    <button (click)="scroll(aboutContent)" class="btn-get-started scrollto">Scroll Down</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </div>
+        </div>
+        </section>
 
-    <div class="section-header wow fadeInUp" style="color:black">
+    <div #aboutContent class="section-header wow fadeInUp" style="color:black">
         <h3>About Us</h3>
         <ul style="padding:50px">
         <li> Kammavar USA Association Inc here in afterwards referred as KammavarUSA., is a registered 501(c)(3) community based Organization to provide services through social, cultural and charity work to all Tamil Nadu based Kammavar community in United States, Canada, India and worldwide.</li>

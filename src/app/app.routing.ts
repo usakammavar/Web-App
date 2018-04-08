@@ -10,6 +10,7 @@ import { ForumsComponent } from './components/forums/forums.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DonationComponent } from './components/donation/donation.component';
 import { RssfeedComponent } from './components/rssfeed/rssfeed.component';
+import {MatrimonalComponent} from './components/matrimonal/matrimonal.component'
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,7 +21,8 @@ export const AppRoutes: Routes = [
     { path: 'forums', component: ForumsComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'donation', component: DonationComponent },
-    { path: 'rssfeed', component: RssfeedComponent }
+    { path: 'rssfeed', component: RssfeedComponent },
+    { path: 'matrimonal', component: MatrimonalComponent },
 
 ];
 

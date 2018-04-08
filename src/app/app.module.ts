@@ -21,6 +21,7 @@ import { NewsService } from './services/news.service';
 import {ServiceModule} from './services/service.module'
 import {HttpClientModule} from '@angular/common/http'
 import { AgmCoreModule } from '@agm/core';
+import { MatrimonalComponent } from './components/matrimonal/matrimonal.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AgmCoreModule } from '@agm/core';
     DonationComponent,
     RssfeedComponent,
     FeedCardComponent,
-    StripHtmlTagsPipe
+    StripHtmlTagsPipe,
+    MatrimonalComponent
   ],
   imports: [
     ServiceModule,
