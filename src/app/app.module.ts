@@ -22,6 +22,7 @@ import {ServiceModule} from './services/service.module'
 import {HttpClientModule} from '@angular/common/http'
 import { AgmCoreModule } from '@agm/core';
 import { MatrimonalComponent } from './components/matrimonal/matrimonal.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MatrimonalComponent } from './components/matrimonal/matrimonal.componen
     RssfeedComponent,
     FeedCardComponent,
     StripHtmlTagsPipe,
-    MatrimonalComponent
+    MatrimonalComponent,
+    RegisterComponent
   ],
   imports: [
     ServiceModule,

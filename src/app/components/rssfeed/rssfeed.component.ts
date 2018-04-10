@@ -12,12 +12,13 @@ import { FeedEntry } from './../../model/feed-entry';
 })
 export class RssfeedComponent implements OnInit {
   
-  private feedUrl1 = "http://rss.vikatan.com/?cat=aval";  
-  private feedUrl2 = "http://rss.vikatan.com/?cat=sakthi";
-  private feedUrl3 = "http://rss.cnn.com/rss/edition.rss";
-  private feedUrl4 = "http://rss.vikatan.com/?cat=nanayam";
-  private feedUrl5 = "http://rss.vikatan.com/?cat=avalkitchen";
-  private feedUrl6 = "http://rss.vikatan.com/?cat=news_health";
+    private feedUrl1 = "http://rss.cnn.com/rss/cnn_latest.rss";
+    private feedUrl2 = "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"; 
+    private feedUrl3 = "http://www.thehindu.com/news/national/tamil-nadu/feeder/default.rss";
+    private feedUrl4 = "http://rss.cnn.com/rss/money_latest.rss";
+    private feedUrl5 = "http://rss.cnn.com/rss/cnn_health.rss";    
+    private feedUrl6 = "http://rss.cnn.com/rss/cnn_world.rss";
+
   
   feeds1: Array<FeedEntry> = [];
   feeds2: Array<FeedEntry> = [];
@@ -62,7 +63,7 @@ export class RssfeedComponent implements OnInit {
     this.service.getFeedContent(this.feedUrl6)
         .subscribe(
             feed => this.feeds6 = feed.items,         
-            error => console.log(error));           
+            error => console.log(error));  
 
   }
   
