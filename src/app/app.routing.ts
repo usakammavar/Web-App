@@ -10,7 +10,8 @@ import { ForumsComponent } from './components/forums/forums.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DonationComponent } from './components/donation/donation.component';
 import { RssfeedComponent } from './components/rssfeed/rssfeed.component';
-import {MatrimonalComponent} from './components/matrimonal/matrimonal.component'
+import {MatrimonalComponent} from './components/matrimonal/matrimonal.component';
+import { MembersComponent } from './components/members/members.component';
 import { RegisterComponent } from './components/register/register.component';
 
 export const AppRoutes: Routes = [
@@ -25,6 +26,7 @@ export const AppRoutes: Routes = [
     { path: 'rssfeed', component: RssfeedComponent },
     { path: 'matrimonal', component: MatrimonalComponent },
     { path: 'register', component: RegisterComponent },
+    { path: 'memberdir', component: MembersComponent }
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);

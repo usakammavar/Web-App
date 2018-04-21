@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ROUTING } from './app.routing'
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule} from '@angular/http';
+import {AgGridModule} from 'ag-grid-angular'
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -23,6 +24,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { AgmCoreModule } from '@agm/core';
 import { MatrimonalComponent } from './components/matrimonal/matrimonal.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MembersComponent } from './components/members/members.component';
 
 
 @NgModule({
@@ -40,13 +42,15 @@ import { RegisterComponent } from './components/register/register.component';
     FeedCardComponent,
     StripHtmlTagsPipe,
     MatrimonalComponent,
-    RegisterComponent
+    RegisterComponent,
+    MembersComponent
   ],
   imports: [
     ServiceModule,
     HttpClientModule,
     HttpModule,
     BrowserModule,
+    AgGridModule.withComponents([]),
     ROUTING,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDokqdPtN0qfxs63GlfF-vSMUXIkSmCTK0'

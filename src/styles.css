@@ -13,6 +13,8 @@
 @import  '../lib/ionicons/css/ionicons.css';
 @import  '../lib/owlcarousel/assets/owl.carousel.css';
 @import '../lib/lightbox/css/lightbox.css';
+@import "~ag-grid/dist/styles/ag-grid.css";
+@import "~ag-grid/dist/styles/ag-theme-balham.css";
 
 body {
   background: #1f2320;

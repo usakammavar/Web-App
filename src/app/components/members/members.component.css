@@ -1,0 +1,12 @@
+#members_page {
+    padding: 100px 0;
+    background: #000;
+    color:white
+  }
+  
+  #members_page h3 {    
+    color:lightgreen
+  }
+  #members_page p {    
+    color:yellow
+  }
