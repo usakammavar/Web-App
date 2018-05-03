@@ -1,0 +1,54 @@
+<!-- <img src="../../../assets/education.jpg" style="width:100%; padding-top:90px; height:500px"> -->
+<div  style="background:white;padding-top:120px;color:black">
+    <div class="row" style="color:black">
+      <div class="col-lg-12 text-center" style="color:black">
+        <h2 class="section-heading">Education</h2>
+        <h3 class="section-subheading text-muted">Big Data and Data Warehousing</h3>
+      </div>
+    </div>
+    <div class="row text-center" style="padding:55px">
+      <div class="col-md-4" style="color:black">
+                <img src="https://pbs.twimg.com/profile_images/1252505253/elephant_rgb_sq.png" style="height: 145px">
+        <h4 class="service-heading">Hadoop</h4>
+        <p class="text-muted">Hadoop is an open source, Java-based programming framework that supports the processing and storage of extremely large data sets in a distributed computing environment.</p>
+      </div>
+      <div class="col-md-4" style="color:black">
+                 <img src="http://cdn.dev.classmethod.jp/wp-content/uploads/2015/08/scala.png" style="height: 145px">
+        <h4 class="service-heading">Scala</h4>
+        <p class="text-muted">
+          Scala is a software programming language that mixes object-oriented methods with functional programming capabilities that support a more concise style of programming and helps in reducing the amount of code developers have to write.
+        </p>
+      </div>
+      <div class="col-md-4" style="color:black">
+                <img src="http://s293798087.online.de/img/tools/spark.png" style="height: 145px">
+        <h4 class="service-heading">Spark</h4>
+        <p class="text-muted">Apache Spark is an open-source engine developed specifically for handling large-scale data processing and analytics. Spark offers the ability to access data in a variety of sources, including HDFS, OpenStack Swift, Amazon S3 and Cassandra.</p>
+      </div>
+    </div>
+</div>
+<div class="container" style="padding-bottom:50px">
+    <div class="row" style="color:white;font-weight:bold;padding-top:30px">
+      <div class="col-lg-12 text-center">
+        <h2>Recorded Sessions</h2>
+        <h3 style="color:white;font-weight:bold;">Kammavar USA training sessions</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h3 style="color: white">Training Topics</h3>
+        <ul class="list-group" style="cursor:pointer">
+          <li class="list-group-item" (click)="updateSrc(first_url)"  id="first"><a>DataWarehousing Concepts</a></li>
+          <li class="list-group-item" (click)="updateSrc(second_url)" id="second"><a>HDFS & MySQL</a></li>
+          <li class="list-group-item" (click)="updateSrc(third_url)" id="third" ><a>Sqoop & Hive</a></li>
+          <li class="list-group-item" (click)="updateSrc(fourth_url)" id="four" ><a>Hive</a></li>
+          <li class="list-group-item" (click)="updateSrc(fifth_url)" id="five" ><a>Hue & Oozie</a></li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <iframe height="450px"width="100%" [src]="current_url" frameborder="0" allowfullscreen #myFrame>
+        </iframe>
+      </div>
+    </div>
+
+  </div>

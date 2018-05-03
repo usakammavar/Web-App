@@ -26,6 +26,7 @@ import { MatrimonalComponent } from './components/matrimonal/matrimonal.componen
 import { RegisterComponent } from './components/register/register.component';
 import { MembersComponent } from './components/members/members.component';
 import { EmploymentComponent } from './components/employment/employment.component';
+import { EducationComponent } from './components/education/education.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { EmploymentComponent } from './components/employment/employment.componen
     MatrimonalComponent,
     RegisterComponent,
     MembersComponent,
-    EmploymentComponent
+    EmploymentComponent,
+    EducationComponent
   ],
   imports: [
     ServiceModule,
