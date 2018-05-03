@@ -25,6 +25,7 @@ import { AgmCoreModule } from '@agm/core';
 import { MatrimonalComponent } from './components/matrimonal/matrimonal.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MembersComponent } from './components/members/members.component';
+import { EmploymentComponent } from './components/employment/employment.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MembersComponent } from './components/members/members.component';
     StripHtmlTagsPipe,
     MatrimonalComponent,
     RegisterComponent,
-    MembersComponent
+    MembersComponent,
+    EmploymentComponent
   ],
   imports: [
     ServiceModule,

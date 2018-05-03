@@ -13,6 +13,7 @@ import { RssfeedComponent } from './components/rssfeed/rssfeed.component';
 import {MatrimonalComponent} from './components/matrimonal/matrimonal.component';
 import { MembersComponent } from './components/members/members.component';
 import { RegisterComponent } from './components/register/register.component';
+import {EmploymentComponent} from './components/employment/employment.component'
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -26,7 +27,8 @@ export const AppRoutes: Routes = [
     { path: 'rssfeed', component: RssfeedComponent },
     { path: 'matrimonal', component: MatrimonalComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'memberdir', component: MembersComponent }
+    { path: 'memberdir', component: MembersComponent },
+    { path: 'employment', component: EmploymentComponent }
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
