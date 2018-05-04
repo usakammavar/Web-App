@@ -27,6 +27,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { MembersComponent } from './components/members/members.component';
 import { EmploymentComponent } from './components/employment/employment.component';
 import { EducationComponent } from './components/education/education.component';
+import { FinancialComponent } from './components/financial/financial.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { EducationComponent } from './components/education/education.component';
     RegisterComponent,
     MembersComponent,
     EmploymentComponent,
-    EducationComponent
+    EducationComponent,
+    FinancialComponent
   ],
   imports: [
     ServiceModule,

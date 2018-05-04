@@ -15,6 +15,7 @@ import { MembersComponent } from './components/members/members.component';
 import { RegisterComponent } from './components/register/register.component';
 import {EmploymentComponent} from './components/employment/employment.component'
 import {EducationComponent} from './components/education/education.component'
+import { FinancialComponent } from './components/financial/financial.component';
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -30,7 +31,8 @@ export const AppRoutes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'memberdir', component: MembersComponent },
     { path: 'employment', component: EmploymentComponent },
-    { path: 'education', component: EducationComponent }
+    { path: 'education', component: EducationComponent },
+    { path: 'finance', component:FinancialComponent}
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);

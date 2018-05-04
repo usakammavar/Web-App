@@ -1,0 +1,54 @@
+<div  style="background:white;padding-top:120px;color:black">
+    <div class="row" style="color:black">
+      <div class="col-lg-12 text-center" style="color:black">
+        <h2 class="section-heading">Finance Service</h2>
+        <h3 class="section-subheading">Financial Discussion Forum</h3>
+      </div>
+    </div>
+    <div class="row text-center" style="padding:55px">
+      <div class="col-md-3" style="color:black">
+                <img src="../../../assets/bitcoin.jpg" style="height: 145px">
+        <h4 class="service-heading">Crypto Currency</h4>
+      </div>
+      <div class="col-md-3" style="color:black">
+                 <img src="../../../assets/stock.jpg" style="height: 145px">
+        <h4 class="service-heading">Stocks</h4>
+      </div>
+      <div class="col-md-3" style="color:black">
+                <img src="../../../assets/mutualfund.png" style="height: 145px">
+        <h4 class="service-heading">Mutual Funds</h4>
+      </div>
+      <div class="col-md-3" style="color:black">
+          <img src="../../../assets/realestate.jpg" style="height: 145px">
+        <h4 class="service-heading">Real Estate</h4>
+      </div>
+    </div>
+</div>
+<div class="row content">
+    <div class="col-lg-12 text-center" style="color:white">
+      <h4 class="section-heading">Financial Discussion, Ideas & Success Stories</h4>
+      <h5 class="section-subheading">Post your financial related ideas and success stories for the benefit of our community people</h5>
+      <button type="button" class="btn btn-success">Add Post</button>
+    </div>
+</div>
+<div class="forum" style="color:white; padding:40px;">
+    <h4 class="section-heading">Kammavar USA FInancial Discussion Timeline</h4>
+    <div class="post-list" *ngFor="let post of posts">
+      <div class="media border p-3 post">
+        <div class="media-body">
+          <h4>{{post.name}} <small><i>Posted on {{post.date}}</i></small></h4>
+          <p>{{post.body}}</p>      
+        </div>
+      </div>
+  </div>
+
+  <div class="container">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+</div>
