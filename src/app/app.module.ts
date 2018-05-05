@@ -28,6 +28,7 @@ import { MembersComponent } from './components/members/members.component';
 import { EmploymentComponent } from './components/employment/employment.component';
 import { EducationComponent } from './components/education/education.component';
 import { FinancialComponent } from './components/financial/financial.component';
+import { SpecialComponent } from './components/special/special.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FinancialComponent } from './components/financial/financial.component';
     MembersComponent,
     EmploymentComponent,
     EducationComponent,
-    FinancialComponent
+    FinancialComponent,
+    SpecialComponent
   ],
   imports: [
     ServiceModule,

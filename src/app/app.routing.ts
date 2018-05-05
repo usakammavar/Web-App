@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import {EmploymentComponent} from './components/employment/employment.component'
 import {EducationComponent} from './components/education/education.component'
 import { FinancialComponent } from './components/financial/financial.component';
+import { SpecialComponent } from './components/special/special.component';
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -32,7 +33,8 @@ export const AppRoutes: Routes = [
     { path: 'memberdir', component: MembersComponent },
     { path: 'employment', component: EmploymentComponent },
     { path: 'education', component: EducationComponent },
-    { path: 'finance', component:FinancialComponent}
+    { path: 'finance', component:FinancialComponent},
+    {path:'special', component:SpecialComponent}
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
