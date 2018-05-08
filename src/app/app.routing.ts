@@ -20,6 +20,7 @@ import { SpecialComponent } from './components/special/special.component';
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'login', component:LoginComponent},
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'service', component: ServiceComponent },
