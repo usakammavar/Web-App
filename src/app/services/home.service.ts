@@ -1,29 +1,27 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import {Response, Headers, RequestOptions} from '@angular/http'
+import {Http, Response, Headers, RequestOptions} from '@angular/http'
 import {Observable} from 'rxjs/Observable';
 import {environment} from '../../environments/environment'
 
 @Injectable()
 export class HomeService {
 
-  headerOption:any;
-  apiPath= environment.apiRoot;
 
-  headerDict = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'Access-Control-Allow-Headers': 'Content-Type',
-}
-
-  // requestOptions = {
-  // headers: new Headers(this.headerDict),
-  //   };
-
-  //this.headerOption= new RequestOptions({headers: headers});
-  constructor(private http: HttpClient) { }
+  options
+  constructor(private http: Http) { 
+    let headers =new Headers({'Content-Type': 'application/json','Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
+    this.options= new RequestOptions({headers: headers})
+  }
 
   getHomeInfo(): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/1' );
+    let response=this.http.get('http://kammavar.gear.host/api/Job').map(this.jobs);
+    console.log("get home response", response)
+    return response
+  }
+
+  private jobs(res: Response) {
+    let job = res.json();
+    return job || { };
   }
 }

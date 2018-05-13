@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  // apiRoot:'http://vashokkumar4u.gear.host/api/values/'
-  apiRoot: 'http://services.groupkt.com/country/get/'
+   apiRoot:'http://kammavarusa.gear.host/'
+  
 };

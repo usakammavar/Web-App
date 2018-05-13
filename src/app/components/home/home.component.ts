@@ -13,13 +13,17 @@ export class HomeComponent implements OnInit {
   lng: number = -74.54329969999998;
 
   constructor(private homeService: HomeService) { }
-
+  res;
   ngOnInit() {
 
-    this.homeService.getHomeInfo().subscribe(data => {
-      console.log("home",data)
-      return data;
-    });
+    this.homeService.getHomeInfo().subscribe(
+      data => {
+        console.log("print rs", data)
+        this.res=data
+      }
+    );
+
+
   
   }
 
