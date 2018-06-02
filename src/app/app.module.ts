@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { ROUTING } from './app.routing'
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule} from '@angular/http';
-import {AgGridModule} from 'ag-grid-angular'
+import {AgGridModule} from 'ag-grid-angular';
+
+import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -54,6 +56,8 @@ import { SpecialComponent } from './components/special/special.component';
     SpecialComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     ServiceModule,
     HttpClientModule,
     HttpModule,

@@ -1,37 +1,39 @@
-<div>  
-  <div class="register-page">
-    
-    <div class="register">
-       <h3>KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ) - Registration</h3>
-       <p>
-        By accessing “KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ)” (hereinafter “we”, “us”, “our”, “KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ)”, “https://kammavarusa.org/forum”), you agree to be legally bound by the following terms. If you do not agree to be legally bound by all of the following terms then please do not access and/or use “KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ)”. We may change these at any time and we’ll do our utmost in informing you, though it would be prudent to review this regularly yourself as your continued usage of “KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ)” after changes mean you agree to be legally bound by these terms as they are updated and/or amended.
-
-       </p>
-       <p>
-        Our forums are powered by phpBB (hereinafter “they”, “them”, “their”, “phpBB software”, “www.phpbb.com”, “phpBB Limited”, “phpBB Teams”) which is a bulletin board solution released under the “GNU General Public License v2” (hereinafter “GPL”) and can be downloaded from www.phpbb.com. The phpBB software only facilitates internet based discussions; phpBB Limited is not responsible for what we allow and/or disallow as permissible content and/or conduct. For further information about phpBB, please see: https://www.phpbb.com/.
-
-       </p>
-       <p>
-        You agree not to post any abusive, obscene, vulgar, slanderous, hateful, threatening, sexually-orientated or any other material that may violate any laws be it of your country, the country where “KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ)” is hosted or International Law. Doing so may lead to you being immediately and permanently banned, with notification of your Internet Service Provider if deemed required by us. The IP address of all posts are recorded to aid in enforcing these conditions. You agree that “KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ)” have the right to remove, edit, move or close any topic at any time should we see fit. As a user you agree to any information you have entered to being stored in a database. While this information will not be disclosed to any third party without your consent, neither “KAMMAVAR USA (கம்மவார் யூ.எஸ்.ஏ)” nor phpBB shall be held responsible for any hacking attempt that may lead to the data being compromised.
-
-       </p>
-             
+ <div class="bg-img">
+    <div class="container">
+      <h1>Register</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Register</button>
+        </div>
+    </form>
     </div>
-    <div align="center">
-        <input type="submit" class="agree-btn" value="I agree to these terms">
-        <input type="submit" class="not-agree-btn" value="I do not agree to these terms">
-
-     </div>
-    
-    
-
-         
-  </div>
- 
-
-
 </div>
-
-
-
-

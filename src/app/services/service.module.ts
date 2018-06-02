@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import {HomeService} from './home.service';
 import {JobsService} from './jobs.service';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
   declarations: [],
-  imports: [],
+  imports: [CommonModule],
   providers: [HomeService, JobsService],
   bootstrap: []
 })
