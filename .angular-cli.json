@@ -36,7 +36,8 @@
         "../lib/isotope/isotope.pkgd.min.js",
         "../lib/lightbox/js/lightbox.min.js",
         "../lib/touchSwipe/jquery.touchSwipe.min.js",
-        "../js/main.js"
+        "../js/main.js",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

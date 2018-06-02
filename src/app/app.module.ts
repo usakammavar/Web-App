@@ -32,6 +32,9 @@ import { EducationComponent } from './components/education/education.component';
 import { FinancialComponent } from './components/financial/financial.component';
 import { SpecialComponent } from './components/special/special.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -62,6 +65,7 @@ import { SpecialComponent } from './components/special/special.component';
     HttpClientModule,
     HttpModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AgGridModule.withComponents([]),
     ROUTING,
     AgmCoreModule.forRoot({

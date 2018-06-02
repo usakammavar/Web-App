@@ -1,7 +1,15 @@
 <img src="../../../assets/matrimonal.jpg" style="width:100%; padding-top:90px;">
+<div class="row content">
+  <div class="col-lg-12 text-center" style="color:white">
+    <h4 class="section-heading">Matrimonal Service</h4>
+    <h5 class="section-subheading">Please post your details</h5>
+    <!-- <button type="button" class="btn btn-success">Add Post</button> -->
+    <button type="button" class="btn btn-success" (click)="postBride()">Show Add Form/Hide</button>
+  </div>
+</div>
 <div>
   <div class="left">
-      <div class="bride-form">
+      <div class="bride-form" *ngIf="showAddForm">
           <h3>BRIDE / BRIDE-GROOM DETAILS</h3>
         <form>
           <table>
@@ -39,16 +47,28 @@
 <div class="left">
   <div class="bride-list">
     <h3 style="text-align:center; color:white">Available Brides / Bride Groom List</h3>
-      <div class="card">
-          <img src="../../../assets/team-2.jpg" alt="Avatar" style="width:100%">
-          <div class="bride">
-            <h4><b>Deepika</b></h4> 
-            <p>26, Software Engineer</p> 
-            <p>New Jersey, USA</p>
-          </div>
+
+    <div class="row">
+      <div *ngFor="let product of brides">
+          <div class="clearfix" ng-if="$index % 3 == 0"></div>
+            <div class="bride-card">
+              <img src="../../../assets/team-2.jpg" alt="Avatar" style="width:100%">
+              <div class="bride">
+                <h4><b>Deepika</b></h4> 
+                <p>26, Software Engineer</p> 
+                <p>New Jersey, USA</p>
+              </div>
+            </div>
       </div>
+    </div>
+
+
+      
   </div>
+
+  
 </div>
+
 
 
 
