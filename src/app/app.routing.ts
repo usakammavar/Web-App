@@ -17,6 +17,7 @@ import {EmploymentComponent} from './components/employment/employment.component'
 import {EducationComponent} from './components/education/education.component'
 import { FinancialComponent } from './components/financial/financial.component';
 import { SpecialComponent } from './components/special/special.component';
+import { MagazineComponent} from './components/magazine/magazine.component'
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,7 +36,8 @@ export const AppRoutes: Routes = [
     { path: 'employment', component: EmploymentComponent },
     { path: 'education', component: EducationComponent },
     { path: 'finance', component:FinancialComponent},
-    {path:'special', component:SpecialComponent}
+    {path:'special', component:SpecialComponent},
+    {path: 'magazine', component:MagazineComponent}
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);

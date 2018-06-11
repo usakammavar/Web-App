@@ -33,6 +33,7 @@ import { FinancialComponent } from './components/financial/financial.component';
 import { SpecialComponent } from './components/special/special.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MagazineComponent } from './components/magazine/magazine.component';
 
 
 
@@ -56,7 +57,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     EmploymentComponent,
     EducationComponent,
     FinancialComponent,
-    SpecialComponent
+    SpecialComponent,
+    MagazineComponent
   ],
   imports: [
     FormsModule,
