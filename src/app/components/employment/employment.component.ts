@@ -19,7 +19,7 @@ export class EmploymentComponent implements OnInit {
     this.jobs.getJobsList().subscribe(
       res => {
         console.log("job list response", res)
-        this.jobList=res
+        this.jobList=res.json()
     });
     
     this.registerForm = this.formBuilder.group({

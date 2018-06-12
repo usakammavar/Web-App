@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { JobsService } from '../../services/jobs.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,8 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
 
   constructor(
+      private job: JobsService,
+      private user: UserService,
       private formBuilder: FormBuilder,
       private route: ActivatedRoute,
       private router: Router) {}
@@ -33,12 +37,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
       this.submitted = true;
-
-      // stop here if form is invalid
       if (this.loginForm.invalid) {
           return;
       }
 
+      this.job.login(this.loginForm.value).subscribe(res=>{
+          let loginResponse;
+          loginResponse = res.json();
+          this.user.name = res.name;
+      })
       console.log("login details", this.loginForm.value)
   }
 }

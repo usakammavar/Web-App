@@ -15,13 +15,47 @@ export class JobsService {
   }
 
   getJobsList(): Observable<any> {
-    let response=this.http.get('http://kammavar.gear.host/api/Job').map(this.jobs);
-    console.log("get home response", response)
-    return response
+    // let response=this.http.get('http://kammavar.gear.host/api/Job').map(this.jobs);
+    // console.log("get home response", response)
+    // return response
+    return this.http.get('http://kammavar.gear.host/api/Job')
+  }
+
+  postJob(data): Observable<any> {
+    return this.http.post('http://kammavar.gear.host/api/Job', data)
   }
 
   private jobs(res: Response) {
     let job = res.json();
     return job || { };
   }
+
+  getFinanceList(): Observable<any> {
+    return this.http.get('http://kammavar.gear.host/api/Job')
+  }
+
+  postFinance(data): Observable<any> {
+    return this.http.post('http://kammavar.gear.host/api/Job', data)
+  }
+
+  getBride(): Observable<any> {
+    return this.http.get('http://kammavar.gear.host/api/Job')
+  }
+
+  postBride(data): Observable<any> {
+    return this.http.post('http://kammavar.gear.host/api/Job', data)
+  }
+
+  login(data): Observable<any> {
+    return this.http.get('http://kammavar.gear.host/api/Login',data)
+  }
+
+  register(data): Observable<any> {
+    return this.http.post('http://kammavar.gear.host/api/Register',data)
+  }
+
+  postContactForm(data): Observable<any> {
+    return this.http.post('http://kammavar.gear.host/api/Job', data)
+  }
+
 }

@@ -18,6 +18,7 @@ import {EducationComponent} from './components/education/education.component'
 import { FinancialComponent } from './components/financial/financial.component';
 import { SpecialComponent } from './components/special/special.component';
 import { MagazineComponent} from './components/magazine/magazine.component'
+import { AuthGuardService } from './services/auth-guard.service';
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,17 +26,17 @@ export const AppRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'service', component: ServiceComponent },
-    { path: 'gallery', component: GalleryComponent },
+    { path: 'gallery', component: GalleryComponent, canActivate:[AuthGuardService]},
     { path: 'forums', component: ForumsComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'donation', component: DonationComponent },
     { path: 'rssfeed', component: RssfeedComponent },
-    { path: 'matrimonal', component: MatrimonalComponent },
+    { path: 'matrimonal', component: MatrimonalComponent,canActivate:[AuthGuardService] },
     { path: 'register', component: RegisterComponent },
     { path: 'memberdir', component: MembersComponent },
-    { path: 'employment', component: EmploymentComponent },
-    { path: 'education', component: EducationComponent },
-    { path: 'finance', component:FinancialComponent},
+    { path: 'employment', component: EmploymentComponent ,canActivate:[AuthGuardService]},
+    { path: 'education', component: EducationComponent,canActivate:[AuthGuardService] },
+    { path: 'finance', component:FinancialComponent,canActivate:[AuthGuardService]},
     {path:'special', component:SpecialComponent},
     {path: 'magazine', component:MagazineComponent}
 ];

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { JobsService } from '../../services/jobs.service';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +16,7 @@ export class RegisterComponent implements OnInit {
     submitted = false;
 
     constructor(
+        private job : JobsService,
         private formBuilder: FormBuilder,
         private router: Router) { }
 
@@ -39,5 +41,9 @@ export class RegisterComponent implements OnInit {
             return;
         }
         console.log("Register", this.registerForm.value)
+        this.job.register(this.registerForm.value).subscribe(res=>{
+            let registerResponse;
+            registerResponse = res.json();
+        })
     }
 }

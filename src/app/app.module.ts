@@ -34,6 +34,8 @@ import { SpecialComponent } from './components/special/special.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MagazineComponent } from './components/magazine/magazine.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 
@@ -58,7 +60,9 @@ import { MagazineComponent } from './components/magazine/magazine.component';
     EducationComponent,
     FinancialComponent,
     SpecialComponent,
-    MagazineComponent
+    MagazineComponent,
+    ForgetPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     FormsModule,

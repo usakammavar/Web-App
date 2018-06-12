@@ -7,7 +7,7 @@
     
           <div class="section-header">
             <h3>Contact Us</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+            <p>Please fill up the following details to address you concern</p>
           </div>
     
           <div class="row contact-info">
@@ -41,26 +41,34 @@
           <div class="form">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contactForm">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
+                  <input type="text" formControlName="name" class="form-control" id="name" placeholder="Your Name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                  <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                    <div *ngIf="f.name.errors.required">Name is required</div>
+                </div>
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
+                  <input type="email" class="form-control" formControlName="email" id="email" placeholder="Your Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                </div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
+                <input type="text" class="form-control" formControlName="subject" id="subject" placeholder="Subject"  [ngClass]="{ 'is-invalid': submitted && f.subject.errors }"/>
+                <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                  <div *ngIf="f.subject.errors.required">Subject is required</div>
+              </div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
+                <textarea class="form-control" formControlName="message" rows="5"  placeholder="Message" [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+                <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                  <div *ngIf="f.message.errors.required">Message is required</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              </div>
+              <div class="text-center"><button type="submit" [disabled]="loading">Send Message</button></div>
             </form>
           </div>
     
