@@ -14,6 +14,7 @@ export class EmploymentComponent implements OnInit {
 
   public jobList;
   public jobListCopy;
+  searchString;
   ngOnInit() {
 
     this.jobs.getJobsList().subscribe(
@@ -86,4 +87,10 @@ export class EmploymentComponent implements OnInit {
 
     selectedJob:any
 
+    triggerSearch(search){
+      console.log("Search string", search)
+      this.jobList = this.jobListCopy.filter(job=>{
+         return (job.title.toLowerCase().replace(/\s/g, '')).indexOf(search.toLowerCase().replace(/\s/g, ''))>-1
+      })
+    }
 }

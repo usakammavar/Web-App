@@ -6,11 +6,12 @@
 <div class="row">
       <div style="padding-left:140px">
           <span>
-            <input class="basic-slide" id="job" type="text"/><label  for="Job Keyword">Job Keyword</label>
+            <input class="basic-slide" id="job" type="text" (keyup)="triggerSearch(searchString)"
+            [(ngModel)]="searchString" /><label  for="Job Keyword">Job Keyword</label>
           </span>
-          <span>
-            <button style="height:48px;width:100px">Search</button>
-          </span>
+          <!-- <span>
+            <button style="height:48px;width:100px" (click)="triggerSearch(searchString)">Search</button>
+          </span> -->
           <span style="padding-left:2vw">
             <button style="height:48px;width:auto" data-toggle="modal" data-target="#myModal">Add New Job</button>
           </span>
