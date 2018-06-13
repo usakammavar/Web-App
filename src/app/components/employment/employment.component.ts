@@ -13,12 +13,14 @@ import {JobsService} from '../../services/jobs.service'
 export class EmploymentComponent implements OnInit {
 
   public jobList;
+  public jobListCopy;
   ngOnInit() {
 
     this.jobs.getJobsList().subscribe(
       res => {
         console.log("job list response", res)
-        this.jobList=res.json()
+        this.jobList=res.json();
+        this.jobListCopy = res.json();
     });
     
     this.registerForm = this.formBuilder.group({
@@ -65,5 +67,23 @@ export class EmploymentComponent implements OnInit {
       })
 
     }
+
+    display:any="none";
+    getJobDetail(job){
+      console.log("Selected Job", job)
+      this.jobs.getJobDetail(job.jobId).subscribe(res=>{
+          let response = res.json();
+          console.log("respo", response)
+          this.selectedJob= {...response, City:job.city, State:job.state, Country:job.country, Title:job.title}
+          console.log("Selected Jon Detail", this.selectedJob)
+          this.display ="block";
+      })
+    }
+
+    closeModal(){
+      this.display="none";
+    }
+
+    selectedJob:any
 
 }

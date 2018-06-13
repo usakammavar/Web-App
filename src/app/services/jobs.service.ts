@@ -27,6 +27,10 @@ export class JobsService {
     return this.http.post('http://kammavar.gear.host/api/Job', data, this.options)
   }
 
+  getJobDetail(id): Observable<any> {
+    return this.http.get('http://kammavar.gear.host/api/Job/'+id, this.options)
+  }
+
   private jobs(res: Response) {
     let job = res.json();
     return job || { };
