@@ -9,9 +9,14 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
+  showSpinner:boolean = false
   ngOnInit() {
+    this.showSpinner=true;
+        setTimeout(()=>{
+          this.showSpinner =false;
+        },2000)
   }
-
-
-
 }
+
+
+

@@ -18,29 +18,31 @@
 </div>
 <div class="forum" style="color:white; padding:40px;" >
     <h4 class="section-heading">Kammavar USA Employment</h4>
+    <div class="row" style="background:#1f2320">
       <div class="mdl-card mdl-shadow--2dp demo-card-square" *ngFor="let job of jobList">
           <div class="mdl-card__title mdl-card--expand">
-            <h4 class="mdl-card__title-text">{{job.Title}}</h4>
+            <h4 class="mdl-card__title-text">{{job.title}}</h4>
           </div>
           <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-              {{job.City}}  - {{job.State}} 
+              {{job.city}}  - {{job.state}} 
           </div>
           <div class="minilogo"></div>
           <div class="mdl-card__supporting-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
           </div>
-          <div class="mdl-card__actions mdl-card--border">
+          <!-- <div class="mdl-card__actions mdl-card--border">
             <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
                 Cancel
               <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-          </div>
+          </div> -->
        </div>
+    </div>
 </div>
 
 
  
 <div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
   
     <!-- Modal content-->
     <div class="modal-content">
@@ -50,6 +52,7 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row">
           <div class="form-group">
               <label for="title">Job Title</label>
               <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
@@ -58,10 +61,10 @@
               </div>
           </div>
           <div class="form-group">
-              <label for="location">Job Location</label>
-              <input type="text" formControlName="location" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
-              <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
-                  <div *ngIf="f.location.errors.required">Job Location is required</div>
+              <label for="city">Job Location</label>
+              <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+              <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                  <div *ngIf="f.city.errors.required">Job Location is required</div>
               </div>
           </div>
           <div class="form-group">
@@ -72,14 +75,49 @@
             </div>
         </div>
           <div class="form-group">
-              <label for="description">Job Description</label>
-              <textarea formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
-              <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-                  <div *ngIf="f.description.errors.required">Job Description is required</div>
-              </div>
-          </div>
-         
-          <div class="form-group">
+                <label for="jobType">Job Type</label>
+                <input type="text" formControlName="jobType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.jobType.errors }" />
+                <div *ngIf="submitted && f.jobType.errors" class="invalid-feedback">
+                    <div *ngIf="f.jobType.errors.required">Job Type is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="eligibility">Eligibility</label>
+                    <input type="text" formControlName="eligibility" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.eligibility.errors }" />
+                    <div *ngIf="submitted && f.eligibility.errors" class="invalid-feedback">
+                        <div *ngIf="f.eligibility.errors.required">Eligibility is required</div>
+                    </div>
+                </div>
+            <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                        </div>
+            </div>
+            <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+                    <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                        <div *ngIf="f.state.errors.required">State is required</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
+                    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                        <div *ngIf="f.country.errors.required">Country is required</div>
+                    </div>
+            </div>
+            <div class="form-group" style="width: 85%;">
+                    <label for="description">Job Description</label>
+                    <textarea formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
+                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">Job Description is required</div>
+                    </div>
+                </div>
+        </div>
+          <div class="form-group" style="text-align:center;width: 90%;padding-top: 16px;">
               <button [disabled]="loading" class="btn btn-primary">Submit</button>
           </div>
       </form>
@@ -90,4 +128,12 @@
     </div>
     
   </div>
+</div>
+
+<div class="container" *ngIf="showSpinner">
+        <div class="row">    
+            <div class="animationload">
+                <div class="osahanloading"></div>
+            </div>
+        </div>
 </div>

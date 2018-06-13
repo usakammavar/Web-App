@@ -7,7 +7,7 @@ export class AuthGuardService implements CanActivate {
   constructor( public router: Router, private user:UserService) {}
 
   canActivate(): boolean {
-    if (this.user.name == undefined) {
+    if (this.user.name != undefined) {
       this.router.navigate(['login']);
       return false;
     }

@@ -194,8 +194,8 @@ h4 h5{
 
 
 .demo-card-square.mdl-card {
-  width: 420px;
-  height: 10px;
+  width: 390px;
+  //height: 10px;
   //float: left;
   margin: 1rem;
   position: relative;
@@ -311,6 +311,8 @@ h4 h5{
 }
 .form-group {
   margin-bottom: 1rem;
+  margin-left:5%;
+  width:40%;
 }
 .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
   border-color: #dc3545;
@@ -332,4 +334,8 @@ textarea{
   min-height:15vw;
   max-height: 30vw;
   overflow:scroll;
+}
+
+.modal-lg {
+  max-width: 80% !important;
 }

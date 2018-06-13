@@ -13,20 +13,11 @@ export class HomeComponent implements OnInit {
   lng: number = -74.54329969999998;
 
   constructor(private homeService: HomeService) { }
-  res;
+  showSpinner:boolean = false
   ngOnInit() {
-
-    this.homeService.getHomeInfo().subscribe(
-      data => {
-        console.log("print rs", data)
-        this.res=data
+    this.showSpinner=true;
+        setTimeout(()=>{
+          this.showSpinner =false;
+        },2000)
       }
-    );
-
-
-  
   }
-
-
-
-}

@@ -41,10 +41,10 @@ export class LoginComponent implements OnInit {
           return;
       }
 
-      this.job.login(this.loginForm.value).subscribe(res=>{
+      this.job.login("cHJhc2FkOnByYXNhZA==").subscribe(res=>{
           let loginResponse;
           loginResponse = res.json();
-          this.user.name = res.name;
+          //this.user.name = res.name;
       })
       console.log("login details", this.loginForm.value)
   }

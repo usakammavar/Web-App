@@ -11,7 +11,7 @@ import { JobsService } from '../../services/jobs.service';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm: FormGroup;
+    registerForm: FormGroup;
     loading = false;
     submitted = false;
 
@@ -26,24 +26,46 @@ export class RegisterComponent implements OnInit {
             lastName: ['', Validators.required],
             email:['', Validators.required],
             username: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            password: ['', [Validators.required, Validators.minLength(6)]],
+            dob:['',Validators.required],
+            city: ['', Validators.required],
+            state: ['', Validators.required],
+            country: ['', Validators.required],
+            closestMetro: ['', Validators.required],
+            nativeLocation: ['', Validators.required],
+            houseName: ['', Validators.required],
+            contactPhone: ['', Validators.required],
+            profession: ['', Validators.required],
+            kulaDeivam: ['', Validators.required],
         });
     }
 
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
+    userCreated:boolean = false;
+    showSpinner:boolean = false;
     onSubmit() {
         this.submitted = true;
-
-        // stop here if form is invalid
         if (this.registerForm.invalid) {
             return;
         }
         console.log("Register", this.registerForm.value)
+        this.showSpinner=true;
         this.job.register(this.registerForm.value).subscribe(res=>{
             let registerResponse;
             registerResponse = res.json();
+            if(registerResponse.UserId){
+                this.showSpinner = false;
+                this.userCreated=true;
+                setTimeout(()=>{
+                    this.userCreated=false
+                },4000);
+            }
+        },error =>{
+            this.showSpinner = false;
+            let errorMessage =<any>error;
+            alert(errorMessage)
         })
     }
 }

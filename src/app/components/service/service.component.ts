@@ -10,7 +10,12 @@ export class ServiceComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  showSpinner:boolean = false;
   ngOnInit() {
+    this.showSpinner=true;
+        setTimeout(()=>{
+          this.showSpinner =false;
+        },2000)
   }
 
   redirect(serviceName){

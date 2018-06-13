@@ -12,7 +12,6 @@ import {JobsService} from '../../services/jobs.service'
 })
 export class EmploymentComponent implements OnInit {
 
-
   public jobList;
   ngOnInit() {
 
@@ -24,9 +23,14 @@ export class EmploymentComponent implements OnInit {
     
     this.registerForm = this.formBuilder.group({
       title: ['', Validators.required],
-      location: ['', Validators.required],
+      city: ['', Validators.required],
       contact: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      jobType: ['', Validators.required],
+      eligibility: ['', Validators.required],
+      email: ['', Validators.required],
+      state: ['', Validators.required],
+      country:['', Validators.required]
   });
   }
 
@@ -43,6 +47,7 @@ export class EmploymentComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
+  showSpinner:boolean = false;
   onSubmit() {
       this.submitted = true;
 
@@ -51,6 +56,14 @@ export class EmploymentComponent implements OnInit {
           return;
       }
       console.log("Register", this.registerForm.value)
-  }
+      this.jobs.postJob(this.registerForm.value).subscribe(res=>{
+        this.showSpinner=true;
+          setTimeout(()=>{
+            this.showSpinner =false;
+          },2000)
+          window.location.reload();
+      })
+
+    }
 
 }

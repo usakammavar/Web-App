@@ -19,12 +19,12 @@
       "prefix": "app",
 
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
       "scripts": [
-        "../lib/jquery/jquery.min.js",
-        "../lib/jquery/jquery-migrate.min.js",
-        "../lib/bootstrap/js/bootstrap.bundle.min.js",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
         "../lib/easing/easing.min.js",
         "../lib/superfish/superfish.min.js",
         "../lib/superfish/hoverIntent.js",
@@ -33,10 +33,9 @@
         "../lib/counterup/counterup.min.js",
         "../lib/owlcarousel/owl.carousel.min.js",
         "../lib/isotope/isotope.pkgd.min.js",
-        "../lib/lightbox/js/lightbox.min.js",
+        "../lib/lightbox/js/lightbox.js",
         "../lib/touchSwipe/jquery.touchSwipe.min.js",
-        "../js/main.js",
-        "../node_modules/font-awesome/css/font-awesome.min.css"
+        "../js/main.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

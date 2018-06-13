@@ -10,7 +10,8 @@ export class JobsService {
 
   options
   constructor(private http: Http) { 
-    let headers =new Headers({'Content-Type': 'application/json','Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
+    let headers =new Headers({'Content-Type': 'application/json',"Authorization": "Basic cHJhc2FkOnByYXNhZA==",
+    'Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
     this.options= new RequestOptions({headers: headers})
   }
 
@@ -21,8 +22,9 @@ export class JobsService {
     return this.http.get('http://kammavar.gear.host/api/Job')
   }
 
-  postJob(data): Observable<any> {
-    return this.http.post('http://kammavar.gear.host/api/Job', data)
+  postJob(data:any): Observable<any> {
+    data.postedBy="102";
+    return this.http.post('http://kammavar.gear.host/api/Job', data, this.options)
   }
 
   private jobs(res: Response) {
@@ -47,11 +49,11 @@ export class JobsService {
   }
 
   login(data): Observable<any> {
-    return this.http.get('http://kammavar.gear.host/api/Login',data)
+    return this.http.get('http://kammavar.gear.host/api/Login', this.options)
   }
 
   register(data): Observable<any> {
-    return this.http.post('http://kammavar.gear.host/api/Register',data)
+    return this.http.post('http://kammavar.gear.host/api/Register',data, this.options)
   }
 
   postContactForm(data): Observable<any> {

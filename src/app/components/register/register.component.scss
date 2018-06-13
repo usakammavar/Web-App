@@ -26,10 +26,12 @@ body, html {
     /* position: absolute;
     right: 0;
     margin: 20px; */
-    max-width: 30%;
+    max-width: 100%;
     padding: 16px;
     background-color: transparent;
     color:white;
+    margin-left: 11vw;
+    margin-right: 11vw;
 }
 
 
@@ -48,6 +50,8 @@ body, html {
 }
 .form-group {
     margin-bottom: 1rem;
+    width:40vw;
+    padding-right:5vw;
 }
 .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
     border-color: #dc3545;
@@ -65,3 +69,6 @@ button, input, optgroup, select, textarea {
 *, ::after, ::before {
     box-sizing: border-box;
 }
+
+//////
+
