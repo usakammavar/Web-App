@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input,OnInit} from "@angular/core"
+import {PaginationInstance} from '../../../../node_modules/ngx-pagination/dist/ngx-pagination.module';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -93,4 +94,29 @@ export class EmploymentComponent implements OnInit {
          return (job.title.toLowerCase().replace(/\s/g, '')).indexOf(search.toLowerCase().replace(/\s/g, ''))>-1
       })
     }
+
+    public filter: string = '';
+    public maxSize: number = 7;
+    public directionLinks: boolean = true;
+    public autoHide: boolean = false;
+    public config: PaginationInstance = {
+        id: 'advanced',
+        itemsPerPage: 5,
+        currentPage: 1
+    };
+    public labels: any = {
+        previousLabel: 'Previous',
+        nextLabel: 'Next',
+        screenReaderPaginationLabel: 'Pagination',
+        screenReaderPageLabel: 'page',
+        screenReaderCurrentLabel: `You're on page`
+    };
+
+
+
+    onPageChange(number: number) {
+        console.log('change to page', number);
+        this.config.currentPage = number;
+    }
+
 }

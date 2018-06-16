@@ -19,6 +19,7 @@ import { FinancialComponent } from './components/financial/financial.component';
 import { SpecialComponent } from './components/special/special.component';
 import { MagazineComponent} from './components/magazine/magazine.component'
 import { AuthGuardService } from './services/auth-guard.service';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,7 +39,8 @@ export const AppRoutes: Routes = [
     { path: 'education', component: EducationComponent,canActivate:[AuthGuardService] },
     { path: 'finance', component:FinancialComponent,canActivate:[AuthGuardService]},
     {path:'special', component:SpecialComponent},
-    {path: 'magazine', component:MagazineComponent}
+    {path: 'magazine', component:MagazineComponent},
+    {path:'forget', component:ResetPasswordComponent},
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
