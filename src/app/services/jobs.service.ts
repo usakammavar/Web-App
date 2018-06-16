@@ -19,16 +19,16 @@ export class JobsService {
     // let response=this.http.get('http://kammavar.gear.host/api/Job').map(this.jobs);
     // console.log("get home response", response)
     // return response
-    return this.http.get('http://kammavar.gear.host/api/Job')
+    return this.http.get('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job')
   }
 
   postJob(data:any): Observable<any> {
     data.postedBy="102";
-    return this.http.post('http://kammavar.gear.host/api/Job', data, this.options)
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data, this.options)
   }
 
   getJobDetail(id): Observable<any> {
-    return this.http.get('http://kammavar.gear.host/api/Job/'+id, this.options)
+    return this.http.get('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job/'+id, this.options)
   }
 
   private jobs(res: Response) {
