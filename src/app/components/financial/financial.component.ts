@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input,OnInit} from "@angular/core"
+import {PaginationInstance} from '../../../../node_modules/ngx-pagination/dist/ngx-pagination.module';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -10,14 +11,34 @@ import { first } from 'rxjs/operators';
 })
 export class FinancialComponent implements OnInit {
 
-
   posts=[
     {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
     {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
     {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
     {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
     {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
   ]
+
 
   registerForm: FormGroup;
   loading = false;
@@ -47,4 +68,29 @@ export class FinancialComponent implements OnInit {
       }
       console.log("Register", this.registerForm.value)
   }
+
+    public filter: string = '';
+    public maxSize: number = 7;
+    public directionLinks: boolean = true;
+    public autoHide: boolean = false;
+    public config: PaginationInstance = {
+        id: 'advanced',
+        itemsPerPage: 5,
+        currentPage: 1
+    };
+    public labels: any = {
+        previousLabel: 'Previous',
+        nextLabel: 'Next',
+        screenReaderPaginationLabel: 'Pagination',
+        screenReaderPageLabel: 'page',
+        screenReaderCurrentLabel: `You're on page`
+    };
+
+
+
+    onPageChange(number: number) {
+        console.log('change to page', number);
+        this.config.currentPage = number;
+    }
+
 }

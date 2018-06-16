@@ -4,6 +4,7 @@ import { ROUTING } from './app.routing'
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule} from '@angular/http';
 import {AgGridModule} from 'ag-grid-angular';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 
@@ -74,6 +75,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     BrowserAnimationsModule,
     AgGridModule.withComponents([]),
     ROUTING,
+    NgxPaginationModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDokqdPtN0qfxs63GlfF-vSMUXIkSmCTK0'
     })

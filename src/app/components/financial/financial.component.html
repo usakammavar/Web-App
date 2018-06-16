@@ -34,7 +34,7 @@
 </div>
 <div class="forum" style="color:white; padding:40px;">
     <h4 class="section-heading">Kammavar USA FInancial Discussion Timeline</h4>
-    <div class="post-list" *ngFor="let post of posts">
+    <div class="post-list" *ngFor="let post of posts| paginate: config">
       <div class="media border p-3 post">
         <div class="media-body">
           <h4>{{post.name}} <small><i>Posted on {{post.date}}</i></small></h4>
@@ -43,15 +43,21 @@
       </div>
   </div>
 
-  <!-- <div class="container">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-  </div> -->
+  <div class="container" style="background: slategray; text-align: center;">
+    <div class="has-text-centered">
+      <pagination-controls [id]="config.id"
+                           [maxSize]="maxSize"
+                           [directionLinks]="directionLinks"
+                           [autoHide]="autoHide"
+                           [previousLabel]="labels.previousLabel"
+                           [nextLabel]="labels.nextLabel"
+                           [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+                           [screenReaderPageLabel]="labels.screenReaderPageLabel"
+                           [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+                           (pageChange)="onPageChange($event)"></pagination-controls>
+  </div>
+  </div>
+
 </div>
 
 <div class="modal fade" id="myModal" role="dialog">
