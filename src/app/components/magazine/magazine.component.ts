@@ -12,13 +12,16 @@ export class MagazineComponent implements OnInit {
   ngOnInit() {
   }
 
-  magazines =["eMagazine One","eMagazine Two","eMagazine Three"]
+  photos=['../../../assets/portfolio/kamma1.jpg','../../../assets/portfolio/kamma2.jpg',
+  '../../../assets/portfolio/kamma3.jpg','../../../assets/portfolio/kamma4.jpg','../../../assets/portfolio/kamma5.jpg']
 
-  currentPDF="../../../assets/eMag/Kammavar USA eMag.pdf?#zoom=160&scrollbar=0&toolbar=0&navpanes=0"
-
-  getPDF(input){
-    
-  }
+  pdfList=[
+          {'name':'First Magazine','src':'../../../assets/eMag/eMag.pdf'},
+          {'name':'January-18 Magazine','src':'../../../assets/eMag/Jan-2018.pdf'},
+          {'name':'April-18 Magazine','src':'../../../assets/eMag/Apr-2018.pdf'},
+          {'name':'October-18 Magazine','src':'../../../assets/eMag/Oct-2018.pdf'}
+        ]
+  
 
 
 }
