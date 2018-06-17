@@ -1,6 +1,10 @@
 
 #team {
-    background: #eee !important;
+    /* background: #eee !important; */
+    /* background-image: url("../../../assets/eMagbg.jpg");
+    background-repeat: no-repeat; */
+    background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.1)), url("../../../assets/eMagbg.jpg") fixed center center;
+    background-size: cover;
 }
 
 .btn-primary:hover,

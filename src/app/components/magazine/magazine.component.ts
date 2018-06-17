@@ -17,9 +17,10 @@ export class MagazineComponent implements OnInit {
 
   pdfList=[
           {'name':'First Magazine','src':'../../../assets/eMag/eMag.pdf'},
+          {'name':'October-17 Magazine','src':'../../../assets/eMag/Oct-2018.pdf'},
           {'name':'January-18 Magazine','src':'../../../assets/eMag/Jan-2018.pdf'},
-          {'name':'April-18 Magazine','src':'../../../assets/eMag/Apr-2018.pdf'},
-          {'name':'October-18 Magazine','src':'../../../assets/eMag/Oct-2018.pdf'}
+          {'name':'April-18 Magazine','src':'../../../assets/eMag/Apr-2018.pdf'}
+          
         ]
   
 
