@@ -12,4 +12,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
   }
 
+  photos=['../../../assets/portfolio/kamma1.jpg','../../../assets/portfolio/kamma2.jpg',
+  '../../../assets/portfolio/kamma3.jpg','../../../assets/portfolio/kamma4.jpg','../../../assets/portfolio/kamma5.jpg']
+
 }
