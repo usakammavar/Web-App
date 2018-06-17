@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'app';
 
   constructor(private router: Router,
-              private user: UserService) { }
+              public user: UserService) { }
 
     ngOnInit() {
         this.router.events.subscribe((evt) => {
