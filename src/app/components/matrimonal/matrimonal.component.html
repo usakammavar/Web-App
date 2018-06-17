@@ -11,36 +11,90 @@
   <div class="left">
       <div class="bride-form" *ngIf="showAddForm">
           <h3>BRIDE / BRIDE-GROOM DETAILS</h3>
-        <form>
-          <table>
-            <tr>
-              <td> <label for="fname">First Name</label><input type="text" id="fname" name="firstname" placeholder="Your name.."></td>
-              <td><label for="lname">Last Name</label><input type="text" id="lname" name="lastname" placeholder="Your last name.."></td>
-              <td><label>Gender</label>
-                <select id="gender" name="country">
-                   <option value="Male">Male</option>
-                   <option value="Female">Female</option>
-                 </select></td>
-            </tr>
-            <tr>
-              <td><label>Qualification</label><input type="text"></td>
-              <td><label>Current Location</label><input type="text"></td>
-              <td><label>Date of Birth</label><input type="date"></td>
-            </tr>
-            <tr>
-              <td><label>Native Place</label><input type="text"></td>
-              <td> <label>Zodiac Sign (Rassi)</label><input type="text" ></td>
-              <td> <label>Birth Star (Natchatram)</label><input type="text" ></td>
-            </tr>
-            <td><label>Expectation on bride/bride groom</label><textarea style="width:100%; height:100px"></textarea></td>  
-            <td><label>Upload Photo</label></td>          
-            <tr>
-              <td colspan="3" style="text-align:center"><input type="submit" value="Submit"></td>
-            </tr>
-            <tr>
-            </tr>
-          </table>
-        </form>
+          <form [formGroup]="brideForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="form-group">
+                    <label for="title">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">first Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <select formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                      <div *ngIf="f.gender.errors.required">Gender is required</div>
+                  </div>
+              </div>
+                <div class="form-group">
+                      <label for="jobType">Qualification</label>
+                      <input type="text" formControlName="qualification" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }" />
+                      <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                          <div *ngIf="f.qualification.errors.required">Qualification is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                          <label for="location">Location</label>
+                          <input type="text" formControlName="location" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
+                          <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+                              <div *ngIf="f.location.errors.required">location is required</div>
+                          </div>
+                      </div>
+                  <div class="form-group">
+                              <label for="dob">Date of Birth</label>
+                              <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                              <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                                  <div *ngIf="f.dob.errors.required">dob is required</div>
+                              </div>
+                  </div>
+                  <div class="form-group">
+                          <label for="native">Native Place</label>
+                          <input type="text" formControlName="native" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.native.errors }" />
+                          <div *ngIf="submitted && f.native.errors" class="invalid-feedback">
+                              <div *ngIf="f.native.errors.required">native is required</div>
+                          </div>
+                  </div>
+                  <div class="form-group">
+                          <label for="zodiac">Zodiac Sign</label>
+                          <input type="text" formControlName="zodiac" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zodiac.errors }" />
+                          <div *ngIf="submitted && f.zodiac.errors" class="invalid-feedback">
+                              <div *ngIf="f.zodiac.errors.required">zodiac is required</div>
+                          </div>
+                  </div>
+                  <div class="form-group">
+                          <label for="star">Birth Star</label>
+                          <input type="text" formControlName="star" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.star.errors }" />
+                          <div *ngIf="submitted && f.star.errors" class="invalid-feedback">
+                              <div *ngIf="f.star.errors.required">Birth star is required</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="star">Upload Photo</label>
+                          <input type="file" name="pic" accept="image/*" formControlName="photo" class="form-control"/>
+                      </div>
+                      <div class="form-group" style="width: 85%;">
+                          <label for="star">Expectation</label>
+                          <textarea formControlName="expectation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.expectation.errors }" ></textarea>
+                          <div *ngIf="submitted && f.expectation.errors" class="invalid-feedback">
+                              <div *ngIf="f.expectation.errors.required">Expectation is required</div>
+                          </div>
+                      </div>
+              </div>
+                <div class="form-group" style="text-align:center;width: 90%;padding-top: 16px;">
+                    <button [disabled]="loading" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
       </div>
   </div>
  </div>

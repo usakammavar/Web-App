@@ -8,11 +8,12 @@ import {environment} from '../../environments/environment'
 export class JobsService {
 
 
-  options
+  options;
+  headers;
   constructor(private http: Http) { 
-    let headers =new Headers({'Content-Type': 'application/json',"Authorization": "Basic cHJhc2FkOnByYXNhZA==",
+    this.headers =new Headers({'Content-Type': 'application/json',"Authorization": "",
     'Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
-    this.options= new RequestOptions({headers: headers})
+    this.options= new RequestOptions({headers: this.headers})
   }
 
   getJobsList(): Observable<any> {
@@ -53,6 +54,9 @@ export class JobsService {
   }
 
   login(data): Observable<any> {
+    this.headers =new Headers({'Content-Type': 'application/json',"Authorization":"Basic "+data,
+    'Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
+    this.options= new RequestOptions({headers: this.headers})
     return this.http.get('http://kammavar.gear.host/api/Login', this.options)
   }
 

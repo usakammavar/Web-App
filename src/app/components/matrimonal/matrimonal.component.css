@@ -1,4 +1,4 @@
-
+/* 
 input[type=text], select, [type=date] {
     width: 100%;
     padding: 8px 20px;
@@ -18,7 +18,7 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+} */
 
 input[type=submit]:hover {
     background-color: #45a049;
@@ -87,3 +87,44 @@ img {
     margin: 10px;
     background: white;
 }
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+    margin-left:5%;
+    width:40%;
+  }
+  .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545;
+  }
+  button, input {
+    overflow: visible;
+  }
+  
+  button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  textarea{
+    min-height:15vw;
+    max-height: 30vw;
+    overflow:scroll;
+  }
+  

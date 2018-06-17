@@ -40,12 +40,13 @@ export class LoginComponent implements OnInit {
       if (this.loginForm.invalid) {
           return;
       }
-
-      this.job.login("cHJhc2FkOnByYXNhZA==").subscribe(res=>{
+      let data = this.loginForm.controls['username'].value+":"+this.loginForm.controls['password'].value
+      let encodedData= btoa(data);
+      this.job.login(encodedData).subscribe(res=>{
           let loginResponse;
           loginResponse = res.json();
-          //this.user.name = res.name;
+          this.user.name= loginResponse;
+          this.router.navigate(["/home"])
       })
-      console.log("login details", this.loginForm.value)
   }
 }

@@ -37,8 +37,12 @@
             <li><a href="#">Refer a Member</a></li>
           </ul>
         </li>
-        <!--<li><a routerLink="/donation" routerLinkActive="menu-active">Donation</a></li>-->
-
+        <li *ngIf="this.user.name" class="menu-has-children"><a href="">
+          <i style="padding-right:6px" class="fa fa-user"></i>{{this.user.name}}</a>
+          <ul>
+            <li><a routerLink="/home" routerLinkActive="menu-active"></a>Logout</li>
+          </ul>
+        </li>
       </ul>
     </nav><!-- #nav-menu-container -->
   </div>

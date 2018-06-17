@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private user: UserService) { }
 
     ngOnInit() {
         this.router.events.subscribe((evt) => {
