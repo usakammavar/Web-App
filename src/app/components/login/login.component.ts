@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
           let loginResponse;
           loginResponse = res.json();
           this.user.name= loginResponse;
-          this.router.navigate(["/home"])
+          this.router.navigate(["/about"])
       })
   }
 }

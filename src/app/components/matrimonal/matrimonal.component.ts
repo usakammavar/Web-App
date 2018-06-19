@@ -75,4 +75,10 @@ export class MatrimonalComponent implements OnInit {
       console.log("Register", this.brideForm.value)
     }
 
+    selectedFile: File;
+    onSelectFile(event){
+      this.selectedFile = <File>event.target.files[0];
+      console.log("File", this.selectedFile)
+    }
+
 }

@@ -22,4 +22,8 @@ export class AppComponent implements OnInit {
         });
     }
 
+    logout(){
+        this.user.name="";
+    }
+
 }
