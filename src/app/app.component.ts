@@ -23,7 +23,9 @@ export class AppComponent implements OnInit {
     }
 
     logout(){
-        this.user.name="";
+        this.user.firstName="";
+        this.user.lastName="";
+        this.user.userName="";
     }
 
 }

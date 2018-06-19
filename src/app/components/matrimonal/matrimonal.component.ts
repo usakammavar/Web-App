@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, Input,OnInit} from "@angular/core"
 import {PaginationInstance} from '../../../../node_modules/ngx-pagination/dist/ngx-pagination.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { JobsService } from "../../services/jobs.service";
 
 @Component({
   selector: 'app-matrimonal',
@@ -11,7 +12,7 @@ import { first } from 'rxjs/operators';
 export class MatrimonalComponent implements OnInit {
 
   brideForm;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private jobs:JobsService) { }
 
   ngOnInit() {
     this.brideForm = this.formBuilder.group({
@@ -73,6 +74,12 @@ export class MatrimonalComponent implements OnInit {
           return;
       }
       console.log("Register", this.brideForm.value)
+      this.jobs.postBride(this.brideForm.value).subscribe(res=>{
+        this.showSpinner=true;
+          setTimeout(()=>{
+            this.showSpinner =false;
+          },2000)
+      })
     }
 
     selectedFile: File;
@@ -80,5 +87,21 @@ export class MatrimonalComponent implements OnInit {
       this.selectedFile = <File>event.target.files[0];
       console.log("File", this.selectedFile)
     }
+
+    display:any="none";
+    getBrideDetail(job){
+      console.log("Selected Job", job)
+      this.jobs.getJobDetail(job.jobId).subscribe(res=>{
+          let response = res.json();
+          //this.selectedBride= {...response, City:job.city, State:job.state, Country:job.country, Title:job.title}
+          this.display ="block";
+      })
+    }
+
+    closeModal(){
+      this.display="none";
+    }
+
+    selectedBride:any
 
 }

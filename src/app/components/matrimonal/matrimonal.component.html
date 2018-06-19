@@ -103,12 +103,12 @@
     <h3 style="text-align:center; color:white">Available Brides / Bride Groom List</h3>
 
     <div class="row">
-      <div *ngFor="let product of brides| paginate: config">
+      <div *ngFor="let bride of brides| paginate: config" (click)="getBrideDetail(bride)">
           <div class="clearfix" ng-if="$index % 3 == 0"></div>
             <div class="bride-card">
               <img src="../../../assets/team-2.jpg" alt="Avatar" style="width:100%">
               <div class="bride">
-                <h4><b>Deepika{{product}}</b></h4> 
+                <h4><b>Deepika{{bride}}</b></h4> 
                 <p>26, Software Engineer</p> 
                 <p>New Jersey, USA</p>
               </div>
@@ -137,6 +137,72 @@
   
 </div>
 
+
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog modal-lg">
+
+      <div class="modal-content">
+        <div class="dialog-header" style="padding-left:15px; padding-right:15px">
+          <button type="button" class="close" (click)="closeModal()" data-dismiss="modal">
+              <i class="fa fa-lg fa-times-circle" aria-hidden="true"></i>
+          </button>
+          <h4 class="modal-title">Bride/Bride Groom Detail</h4>
+        </div>
+        <div class="modal-body">
+         <div class="table-responsive">          
+            <table class="table">
+                <tr>
+                    <th>First Name</th>
+                    <td>{{selectedBride?.firstName}}</td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td>{{selectedBride?.lastName}}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{selectedBride?.gender}}</td>
+                </tr>
+                <tr>
+                    <th>Qualification</th>
+                    <td>{{selectedBride?.qualification}}</td>
+                </tr>
+                <tr>
+                    <th>Eligibility</th>
+                    <td>{{selectedBride?.Eligibility}}</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>{{selectedBride?.location}}</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>{{selectedBride?.dob}}</td>
+                </tr>
+                <tr>
+                    <th>Native</th>
+                    <td>{{selectedBride?.native}}</td>
+                </tr>
+                <tr>
+                    <th>Zodiac Sign</th>
+                    <td>{{selectedBride?.zodiac}}</td>
+                </tr>
+                <tr>
+                    <th>Star</th>
+                    <td>{{selectedBride?.star}}</td>
+                </tr>
+                <tr>
+                    <th>Expectation</th>
+                    <td>{{selectedBride?.expectation}}</td>
+                </tr>
+            </table>
+            </div>
+            </div>
+    
+      </div>
+      
+    </div>
+    </div>
 
 
 

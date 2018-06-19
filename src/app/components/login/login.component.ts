@@ -45,7 +45,11 @@ export class LoginComponent implements OnInit {
       this.job.login(encodedData).subscribe(res=>{
           let loginResponse;
           loginResponse = res.json();
-          this.user.name= loginResponse;
+          console.log("user res",loginResponse )
+          let parse = JSON.parse(loginResponse)
+          this.user.firstName= parse.firstName;
+          console.log("user firstNAme", parse.firstName,'.........',this.user.firstName)
+          this.user.lastName= loginResponse.lastName;
           this.router.navigate(["/about"])
       })
   }

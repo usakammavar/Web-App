@@ -4,17 +4,34 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UserService {
 
-    nameObj;
+    userNameObj;
+    firstNameObj;
+    LastNameObj;
     constructor(){
 
     }
-
-    get name(){
-        return this.nameObj
+    get userName(){
+        return this.userNameObj
     }
 
-    set name(obj){
-        this.nameObj = obj;
+    set userName(obj){
+        this.userNameObj = obj;
+    }
+
+    get firstName(){
+        return this.firstNameObj
+    }
+
+    set firstName(obj){
+        this.firstNameObj = obj;
+    }
+
+    get lastName(){
+        return this.LastNameObj
+    }
+
+    set lastName(obj){
+        this.LastNameObj = obj;
     }
 
 }

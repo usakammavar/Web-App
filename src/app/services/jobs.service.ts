@@ -38,34 +38,39 @@ export class JobsService {
   }
 
   getFinanceList(): Observable<any> {
-    return this.http.get('http://kammavar.gear.host/api/Job')
+    return this.http.get('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job')
   }
 
   postFinance(data): Observable<any> {
-    return this.http.post('http://kammavar.gear.host/api/Job', data)
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
   }
 
   getBride(): Observable<any> {
-    return this.http.get('http://kammavar.gear.host/api/Job')
+    return this.http.get('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job')
   }
 
   postBride(data): Observable<any> {
-    return this.http.post('http://kammavar.gear.host/api/Job', data)
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
   }
 
   login(data): Observable<any> {
+    //192.168.1.9:52681
     this.headers =new Headers({'Content-Type': 'application/json',"Authorization":"Basic "+data,
     'Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
     this.options= new RequestOptions({headers: this.headers})
-    return this.http.get('http://kammavar.gear.host/api/Login', this.options)
+    return this.http.get('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Login', this.options)
   }
 
   register(data): Observable<any> {
-    return this.http.post('http://kammavar.gear.host/api/Register',data, this.options)
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Register',data, this.options)
   }
 
   postContactForm(data): Observable<any> {
-    return this.http.post('http://kammavar.gear.host/api/Job', data)
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
+  }
+
+  forgetPassword(data): Observable<any> {
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
   }
 
 }

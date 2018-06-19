@@ -43,7 +43,7 @@
             <li><a routerLink="/home" routerLinkActive="menu-active"></a>Logout</li>
           </ul>
         </li> -->
-        <li *ngIf="this.user.name">
+        <li *ngIf="this.user.firstName">
           <a routerLink="/home" (click)="logout()" routerLinkActive="menu-active">Logout</a></li>
       </ul>
     </nav><!-- #nav-menu-container -->

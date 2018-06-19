@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { JobsService } from '../../services/jobs.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -9,7 +10,7 @@ import { first } from 'rxjs/operators';
 })
 export class ResetPasswordComponent implements OnInit {
   registerForm
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private jobs:JobsService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -28,6 +29,12 @@ export class ResetPasswordComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
+      this.jobs.forgetPassword(this.registerForm.value).subscribe(res=>{
+        this.showSpinner=true;
+          setTimeout(()=>{
+            this.showSpinner =false;
+          },2000)
+      })
     }
 
 }
