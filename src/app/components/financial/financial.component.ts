@@ -3,6 +3,7 @@ import {PaginationInstance} from '../../../../node_modules/ngx-pagination/dist/n
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { UserService } from "../../services/user.service";
 
 @Component({
   selector: 'app-financial',
@@ -46,12 +47,13 @@ export class FinancialComponent implements OnInit {
 
   constructor(
       private formBuilder: FormBuilder,
-      private router: Router) { }
+      private router: Router,
+      private user: UserService) { }
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
-          firstName: ['', Validators.required],
-          lastName: ['', Validators.required],
+          firstName: [this.user.firstName, Validators.required],
+          lastName: [this.user.lastName, Validators.required],
           message: ['', Validators.required]
       });
   }

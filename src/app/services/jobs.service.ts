@@ -54,7 +54,6 @@ export class JobsService {
   }
 
   login(data): Observable<any> {
-    //192.168.1.9:52681
     this.headers =new Headers({'Content-Type': 'application/json',"Authorization":"Basic "+data,
     'Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
     this.options= new RequestOptions({headers: this.headers})
@@ -70,7 +69,11 @@ export class JobsService {
   }
 
   forgetPassword(data): Observable<any> {
-    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Login/ForgotPassword', data)
+  }
+
+  changePassword(data): Observable<any> {
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/ChangePassword', data)
   }
 
 }

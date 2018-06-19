@@ -14,7 +14,7 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      email: ['', Validators.required]
+      userEmail: ['', Validators.required]
   });
   }
 
@@ -29,6 +29,7 @@ export class ResetPasswordComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
+      console.log("user email", this.registerForm.value)
       this.jobs.forgetPassword(this.registerForm.value).subscribe(res=>{
         this.showSpinner=true;
           setTimeout(()=>{

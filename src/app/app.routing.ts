@@ -20,6 +20,7 @@ import { SpecialComponent } from './components/special/special.component';
 import { MagazineComponent} from './components/magazine/magazine.component'
 import { AuthGuardService } from './services/auth-guard.service';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,6 +42,7 @@ export const AppRoutes: Routes = [
     {path:'special', component:SpecialComponent},
     {path: 'magazine', component:MagazineComponent},
     {path:'forget', component:ResetPasswordComponent},
+    {path:'changePwd', component:ForgetPasswordComponent}
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);

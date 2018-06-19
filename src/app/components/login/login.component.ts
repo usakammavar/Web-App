@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
-
+  errors;
+  parse:any;
   onSubmit() {
       this.submitted = true;
       if (this.loginForm.invalid) {
@@ -42,15 +43,23 @@ export class LoginComponent implements OnInit {
       }
       let data = this.loginForm.controls['username'].value+":"+this.loginForm.controls['password'].value
       let encodedData= btoa(data);
+      
       this.job.login(encodedData).subscribe(res=>{
           let loginResponse;
           loginResponse = res.json();
-          console.log("user res",loginResponse )
-          let parse = JSON.parse(loginResponse)
-          this.user.firstName= parse.firstName;
-          console.log("user firstNAme", parse.firstName,'.........',this.user.firstName)
-          this.user.lastName= loginResponse.lastName;
+          this.parse = JSON.parse(loginResponse)
+          
+          this.user.firstName= this.parse.firstName;
+          this.user.lastName= this.parse.lastName;
+          this.errors = this.parse.errorMessage;
+          if(this.parse.errorMessage){
+            return false
+        }
           this.router.navigate(["/about"])
-      })
+      }
+    //   , error => {
+    //     this.errors = this.parse.errorMessage;
+    //   }
+    )
   }
 }
