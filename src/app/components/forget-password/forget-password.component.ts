@@ -38,6 +38,7 @@ export class ForgetPasswordComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
   showSpinner:boolean=false;
+  errors;
   onSubmit() {
       this.submitted = true;
       if (this.loginForm.invalid) {
@@ -49,6 +50,12 @@ export class ForgetPasswordComponent implements OnInit {
           setTimeout(()=>{
             this.showSpinner =false;
           },2000)
-      }) 
+          this.router.navigate(["/login"]);
+      },error=>{
+        this.showSpinner = false;
+        this.errors =<any>error;
+        let errorJson = JSON.parse(this.errors.json());
+      })
+    
   }
 }

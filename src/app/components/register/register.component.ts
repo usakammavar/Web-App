@@ -45,6 +45,7 @@ export class RegisterComponent implements OnInit {
 
     userCreated:boolean = false;
     showSpinner:boolean = false;
+    errors;
     onSubmit() {
         this.submitted = true;
         if (this.registerForm.invalid) {
@@ -58,14 +59,15 @@ export class RegisterComponent implements OnInit {
             if(registerResponse.UserId){
                 this.showSpinner = false;
                 this.userCreated=true;
+                this.router.navigate(["/login"]);
                 setTimeout(()=>{
                     this.userCreated=false
                 },4000);
             }
         },error =>{
             this.showSpinner = false;
-            let errorMessage =<any>error;
-            alert(errorMessage)
+            this.errors =<any>error;
+            let errorJson = JSON.parse(this.errors.json());
         })
     }
 }
