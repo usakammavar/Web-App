@@ -12,9 +12,18 @@ import { JobsService } from "../../services/jobs.service";
 export class MatrimonalComponent implements OnInit {
 
   brideForm;
+  bridesCopy;
+  brides;
   constructor(private formBuilder:FormBuilder, private jobs:JobsService) { }
 
   ngOnInit() {
+
+    this.jobs.getMatrimony().subscribe(
+      res => {
+        console.log("job list response", res)
+        this.brides=res.json();
+        this.bridesCopy = res.json();
+    });
     this.brideForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -31,7 +40,7 @@ export class MatrimonalComponent implements OnInit {
   
   }
 
-  public brides=[1,2,3,4,5,6,7,8,9]
+ 
 
   public showAddForm:boolean =false;
   postBride(){
@@ -48,7 +57,7 @@ export class MatrimonalComponent implements OnInit {
     public autoHide: boolean = false;
     public config: PaginationInstance = {
         id: 'advanced',
-        itemsPerPage: 6,
+        itemsPerPage: 8,
         currentPage: 1
     };
     public labels: any = {
@@ -74,7 +83,7 @@ export class MatrimonalComponent implements OnInit {
           return;
       }
       console.log("Register", this.brideForm.value)
-      this.jobs.postBride(this.brideForm.value).subscribe(res=>{
+      this.jobs.matrimony(this.brideForm.value).subscribe(res=>{
         this.showSpinner=true;
           setTimeout(()=>{
             this.showSpinner =false;
@@ -89,11 +98,11 @@ export class MatrimonalComponent implements OnInit {
     }
 
     display:any="none";
-    getBrideDetail(job){
-      console.log("Selected Job", job)
-      this.jobs.getJobDetail(job.jobId).subscribe(res=>{
+    getBrideDetail(bride){
+      this.jobs.getMatrimonyDetail(bride).subscribe(res=>{
           let response = res.json();
           //this.selectedBride= {...response, City:job.city, State:job.state, Country:job.country, Title:job.title}
+          this.selectedBride = response;
           this.display ="block";
       })
     }

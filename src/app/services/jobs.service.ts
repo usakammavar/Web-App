@@ -76,4 +76,19 @@ export class JobsService {
     return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/ChangePassword', data)
   }
 
+  contactUs(data): Observable<any> {
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/ContactUs', data)
+  }
+
+  matrimony(data): Observable<any> {
+    return this.http.post('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/Matrimony', data)
+  }
+
+  getMatrimony(): Observable<any> {
+    return this.http.get('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/matrimony')
+  }
+
+  getMatrimonyDetail(id): Observable<any> {
+    return this.http.get('http://kammavarusa.us-east-1.elasticbeanstalk.com/api/matrimony/'+id, this.options)
+  }
 }
