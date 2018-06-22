@@ -22,6 +22,8 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 
+
+
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'login', component:LoginComponent},

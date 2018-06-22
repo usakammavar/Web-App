@@ -4,7 +4,7 @@ import {Router} from '@angular/router'
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
-  styleUrls: ['./service.component.css']
+  styleUrls: ['./service.component.scss']
 })
 export class ServiceComponent implements OnInit {
 
