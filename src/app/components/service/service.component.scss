@@ -98,7 +98,7 @@ item:hover{
 }
 
 .service-item .caption .caption-content h2 {
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
 }
 
@@ -137,4 +137,9 @@ item:hover{
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }
+}
+
+.service-titile{
+  font-size:20px;
+  font-weight:bold;
 }

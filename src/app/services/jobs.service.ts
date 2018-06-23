@@ -12,7 +12,9 @@ export class JobsService {
   headers;
   constructor(private http: Http) { 
     this.headers =new Headers({'Content-Type': 'application/json',"Authorization": "",
-    'Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type'});
+    'Accept':'application/json','Access-Control-Allow-Headers': 'Content-Type',
+    'ClientId':'c6a913c1-e38d-4057-9db5-c3ea5182719b','Tenant':'vashok4uhotmail.onmicrosoft.com',
+    'Audience':'https://vashok4uhotmail.onmicrosoft.com/KammaWebApi' });
     this.options= new RequestOptions({headers: this.headers})
   }
 
@@ -20,7 +22,7 @@ export class JobsService {
     // let response=this.http.get('https://kammavar.gear.host/api/Job').map(this.jobs);
     // console.log("get home response", response)
     // return response
-    return this.http.get('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job')
+    return this.http.get('https://kammavarusa.azurewebsites.net/api/Job', this.options)
   }
 
   postJob(data:any): Observable<any> {
@@ -38,19 +40,19 @@ export class JobsService {
   }
 
   getFinanceList(): Observable<any> {
-    return this.http.get('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job')
+    return this.http.get('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', this.options)
   }
 
   postFinance(data): Observable<any> {
-    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
+    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data, this.options)
   }
 
   getBride(): Observable<any> {
-    return this.http.get('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job')
+    return this.http.get('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', this.options)
   }
 
   postBride(data): Observable<any> {
-    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
+    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data, this.options)
   }
 
   login(data): Observable<any> {
@@ -65,27 +67,27 @@ export class JobsService {
   }
 
   postContactForm(data): Observable<any> {
-    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data)
+    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Job', data, this.options)
   }
 
   forgetPassword(data): Observable<any> {
-    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Login/ForgotPassword', data)
+    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Login/ForgotPassword', data, this.options)
   }
 
   changePassword(data): Observable<any> {
-    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/ChangePassword', data)
+    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/ChangePassword', data, this.options)
   }
 
   contactUs(data): Observable<any> {
-    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/ContactUs', data)
+    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/ContactUs', data, this.options)
   }
 
   matrimony(data): Observable<any> {
-    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Matrimony', data)
+    return this.http.post('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/Matrimony', data, this.options)
   }
 
   getMatrimony(): Observable<any> {
-    return this.http.get('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/matrimony')
+    return this.http.get('https://kammavarusa.us-east-1.elasticbeanstalk.com/api/matrimony', this.options)
   }
 
   getMatrimonyDetail(id): Observable<any> {
