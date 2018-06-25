@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  padding: 30px 0;
+  /* padding: 30px 0; */
   height: 92px;
   background:#1f2320;
   position: fixed;
@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.9);
-  padding: 30px 0;
+  /* padding: 30px 0; */
   height: 92px;
   transition: all 0.5s;
 }

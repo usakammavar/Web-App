@@ -119,12 +119,14 @@
 </div>
 </section>
 
-<!-- <video autoplay loop id="video-background" muted plays-inline>
-    <source src="assets/homeVideo1.mp4" type="video/mp4">
-</video> -->
 <agm-map [latitude]="lat" [longitude]="lng" >
     <agm-marker [latitude]="lat" [longitude]="lng" [title]="title"></agm-marker>
 </agm-map>
+<!-- <div style="width:100%" class="row">
+  <div class="gmap_canvas">
+    <iframe width="790" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=60%20village%20road%2C%20kendall%20park%2C%20New%20Jersey&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    </div>
+</div> -->
 
 <div class="container" *ngIf="showSpinner">
     <div class="row">    
@@ -133,3 +135,36 @@
         </div>
     </div>
 </div>
+
+<section class="banner" id="top" style="overflow:hidden">
+  <div>
+      <div class="row">
+          <div class="col-md-8" style="padding-right:0px !important">
+              <div class="left-banner-content">
+                  <div class="text-content">
+                      <h6>There you go</h6>
+                      <div class="line-dec"></div>
+                      <h1>Connect with us on <br>Social Media</h1>
+                      <div class="white-border-button">
+                          <a href="/contact" class="scroll-link" data-id="best-offer-section">Discover More</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4" style="padding-left:0px !important">
+              <div class="right-banner-content">
+                  <div class="logo"><a href="index.html"><img src="../../../assets/linkedincover.png" alt=""
+                    style="width:350px"></a></div>
+                  <div class="line-dec"></div>
+                  <p>“ We do not have a choice on whether we do social media, the question is how well we do it ”</p>
+                  <p>"-Erik Qualman"</p>
+                  <ul class="social-icons">
+                      <li><a href="https://www.facebook.com/groups/USAKAMMA/?ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="https://plus.google.com/u/1/103036080164310031401" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
