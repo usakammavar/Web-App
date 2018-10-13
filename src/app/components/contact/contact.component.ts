@@ -38,20 +38,21 @@ export class ContactComponent implements OnInit {
     if (this.contactForm.invalid) {
         return;
     }
-    console.log("Register", this.contactForm.value)
     this.job.contactUs(this.contactForm.value).subscribe(res=>{
       let registerResponse;
-      registerResponse = res.json();
+      registerResponse = res;
           this.showSpinner = false;
           this.contactSuccess=true;
           setTimeout(()=>{
             this.contactSuccess=false
         },3000);
-  },error =>{
-      this.showSpinner = false;
-      this.errors =<any>error;
-      let errorJson = JSON.parse(this.errors.json());
-  })
+  }
+  // ,error =>{
+  //     this.showSpinner = false;
+  //     this.errors =<any>error;
+  //     let errorJson = JSON.parse(this.errors.json());
+  // }
+)
 }
 
 }

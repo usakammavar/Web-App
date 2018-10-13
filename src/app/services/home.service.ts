@@ -14,14 +14,5 @@ export class HomeService {
     this.options= new RequestOptions({headers: headers})
   }
 
-  getHomeInfo(): Observable<any> {
-    let response=this.http.get('http://kammavar.gear.host/api/Job').map(this.jobs);
-    console.log("get home response", response)
-    return response
-  }
 
-  private jobs(res: Response) {
-    let job = res.json();
-    return job || { };
-  }
 }
