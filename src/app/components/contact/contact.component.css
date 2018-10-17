@@ -1,3 +1,14 @@
 .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
     border-color: #dc3545;
   }
+  .container {
+    /* position: absolute;
+    right: 0;
+    margin: 20px; 
+    max-width: 97%;*/
+    padding: 16px;
+    background-color: transparent;
+    color:white;
+    margin-left: 11vw;
+    margin-right: 11vw;
+}

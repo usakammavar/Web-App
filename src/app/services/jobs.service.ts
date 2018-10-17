@@ -7,7 +7,7 @@ import {environment} from '../../environments/environment'
 @Injectable()
 export class JobsService {
 
-
+  apiPath ='https://kammavarsangam.org/';
   options;
   headers;
   constructor(private http: Http) { 
@@ -22,6 +22,7 @@ export class JobsService {
     // return response
     return this.http.get('https://kammavarsangam.org/api/Job', this.options)
   }
+
 
   postJob(data:any): Observable<any> {
     data.postedBy="102";
@@ -38,11 +39,11 @@ export class JobsService {
   }
 
   getFinanceList(): Observable<any> {
-    return this.http.get('https://kammavarsangam.org/api/Job', this.options)
+    return this.http.get('https://kammavarsangam.org/api/Finance', this.options)
   }
 
   postFinance(data): Observable<any> {
-    return this.http.post('https://kammavarsangam.org/api/Job', data, this.options)
+    return this.http.post('https://kammavarsangam.org/api/Finance', data, this.options)
   }
 
   login(data): Observable<any> {

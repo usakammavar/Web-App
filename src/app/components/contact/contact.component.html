@@ -74,10 +74,18 @@
          
     
         </div>
-        <div style="width: 98%;display: flex;justify-content: center;"class="alert alert-success" role="alert" *ngIf="contactSuccess">
+        <div style="width: 98%;display: flex;justify-content: center; color:green" *ngIf="contactSuccess">
             <div >
             Request was submitted Successfully!!!
           </div>
         </div>
       </div><!-- #contact -->
       </main>
+
+      <div class="container" *ngIf="showSpinner">
+        <div class="row">    
+            <div class="animationload">
+                <div class="osahanloading"></div>
+            </div>
+        </div>
+    </div>

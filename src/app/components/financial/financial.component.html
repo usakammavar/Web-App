@@ -37,8 +37,8 @@
     <div class="post-list" *ngFor="let post of posts| paginate: config">
       <div class="media border p-3 post">
         <div class="media-body">
-          <h4>{{post.name}} <small><i>Posted on {{post.date}}</i></small></h4>
-          <p>{{post.body}}</p>      
+          <h4>{{post.firstName}} <small><i>Posted on {{post.datePosted}}</i></small></h4>
+          <p>{{post.message}}</p>      
         </div>
       </div>
   </div>
@@ -85,6 +85,13 @@
                   <div *ngIf="f.lastName.errors.required">Last Name is required</div>
               </div>
           </div>
+          <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                <div *ngIf="f.userName.errors.required">User Name is required</div>
+            </div>
+        </div>
           <div class="form-group">
               <label for="username">Message</label>
               <textarea formControlName="message" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.message.errors }" ></textarea>
