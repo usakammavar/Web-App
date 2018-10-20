@@ -30,7 +30,7 @@ export const AppRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'service', component: ServiceComponent },
-    { path: 'gallery', component: GalleryComponent},
+    { path: 'gallery', component: GalleryComponent, canActivate:[AuthGuardService]},
     { path: 'forums', component: ForumsComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'donation', component: DonationComponent },
