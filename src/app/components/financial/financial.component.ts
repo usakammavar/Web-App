@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { UserService } from "../../services/user.service";
 import { JobsService } from "../../services/jobs.service";
+import { ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-financial',
@@ -13,36 +14,8 @@ import { JobsService } from "../../services/jobs.service";
 })
 export class FinancialComponent implements OnInit {
 
+  @ViewChild('closeAdd') closeAdd: ElementRef;
   posts
-//   =[
-//     {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Prasad', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vinoth', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Sachin', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Anand', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//     {'name':'Vijay', 'date':'May 03,2018','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-//   ]
-
-
   registerForm: FormGroup;
   loading = false;
   submitted = false;
@@ -55,12 +28,7 @@ export class FinancialComponent implements OnInit {
       private user: UserService) { }
 
   ngOnInit() {
-    this.jobs.getFinanceList().subscribe(
-        res => {
-          console.log("job list response", res)
-          this.posts=res.json();
-          this.posts = res.json();
-      });
+        this.getList();
       this.registerForm = this.formBuilder.group({
           firstName: [this.user.firstName, Validators.required],
           lastName: [this.user.lastName, Validators.required],
@@ -69,9 +37,19 @@ export class FinancialComponent implements OnInit {
       });
   }
 
+  getList(){
+    this.jobs.getFinanceList().subscribe(
+        res => {
+          console.log("job list response", res)
+          this.posts=res.json();
+          this.posts = res.json();
+      });
+      this.showSpinner =false;
+  }
+
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
-
+  showSpinner:boolean = false;
   onSubmit() {
       this.submitted = true;
 
@@ -80,11 +58,9 @@ export class FinancialComponent implements OnInit {
           return;
       }
       this.jobs.postFinance(this.registerForm.value).subscribe(res=>{
-        // this.showSpinner=true;
-        //   setTimeout(()=>{
-        //     this.showSpinner =false;
-        //   },2000)
-          window.location.reload();
+        this.showSpinner=true;
+        this.getList();
+        this.closeAdd.nativeElement.click()
       })
       console.log("Register", this.registerForm.value)
   }

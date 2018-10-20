@@ -18,12 +18,7 @@ export class MatrimonalComponent implements OnInit {
 
   ngOnInit() {
 
-    this.jobs.getMatrimony().subscribe(
-      res => {
-        console.log("job list response", res)
-        this.brides=res.json();
-        this.bridesCopy = res.json();
-    });
+    this.getList();
     this.brideForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -41,7 +36,15 @@ export class MatrimonalComponent implements OnInit {
   }
 
  
-
+getList(){
+  this.jobs.getMatrimony().subscribe(
+    res => {
+      console.log("job list response", res)
+      this.brides=res.json();
+      this.bridesCopy = res.json();
+  });
+  this.showSpinner=false;
+}
   public showAddForm:boolean =false;
   postBride(){
     if(this.showAddForm){
@@ -85,9 +88,8 @@ export class MatrimonalComponent implements OnInit {
       console.log("Register", this.brideForm.value)
       this.jobs.matrimony(this.brideForm.value).subscribe(res=>{
         this.showSpinner=true;
-          setTimeout(()=>{
-            this.showSpinner =false;
-          },2000)
+        this.postBride();
+        this.getList();
       })
     }
 

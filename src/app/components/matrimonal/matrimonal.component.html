@@ -79,10 +79,10 @@
                               <div *ngIf="f.star.errors.required">Birth star is required</div>
                           </div>
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                           <label for="star">Upload Photo</label>
                           <input type="file" name="pic" accept="image/*" (change)="onSelectFile($event)" formControlName="photo" class="form-control"/>
-                      </div>
+                      </div> -->
                       <div class="form-group" style="width: 85%;">
                           <label for="star">Expectation</label>
                           <textarea formControlName="expectation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.expectation.errors }" ></textarea>

@@ -3,6 +3,7 @@ import {PaginationInstance} from '../../../../node_modules/ngx-pagination/dist/n
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { ViewChild, ElementRef} from '@angular/core';
 
 import {JobsService} from '../../services/jobs.service'
 
@@ -12,18 +13,13 @@ import {JobsService} from '../../services/jobs.service'
   styleUrls: ['./employment.component.scss']
 })
 export class EmploymentComponent implements OnInit {
-
+  @ViewChild('closeAdd') closeAdd: ElementRef;
   public jobList;
   public jobListCopy;
   searchString;
   ngOnInit() {
 
-    this.jobs.getJobsList().subscribe(
-      res => {
-        console.log("job list response", res)
-        this.jobList=res.json();
-        this.jobListCopy = res.json();
-    });
+    this.getList();
     
     this.registerForm = this.formBuilder.group({
       title: ['', Validators.required],
@@ -36,6 +32,16 @@ export class EmploymentComponent implements OnInit {
       state: ['', Validators.required],
       country:['', Validators.required]
   });
+  }
+
+  getList(){
+    this.jobs.getJobsList().subscribe(
+      res => {
+        console.log("job list response", res)
+        this.jobList=res.json();
+        this.jobListCopy = res.json();
+    });
+    this.showSpinner=false;
   }
 
   registerForm: FormGroup;
@@ -62,10 +68,9 @@ export class EmploymentComponent implements OnInit {
       console.log("Register", this.registerForm.value)
       this.jobs.postJob(this.registerForm.value).subscribe(res=>{
         this.showSpinner=true;
-          setTimeout(()=>{
-            this.showSpinner =false;
-          },2000)
-          window.location.reload();
+        this.getList();
+        this.closeAdd.nativeElement.click();
+        //this.closeModal();
       })
 
     }
