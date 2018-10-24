@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-service',
@@ -8,7 +9,7 @@ import {Router} from '@angular/router'
 })
 export class ServiceComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,public user: UserService) { }
 
   showSpinner:boolean = false;
   ngOnInit() {

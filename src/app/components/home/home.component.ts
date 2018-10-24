@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HomeService} from '../../services/home.service'
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   lat: number = 40.4306158;
   lng: number = -74.54329969999998;
 
-  constructor(private homeService: HomeService) { }
+  constructor(private homeService: HomeService,public user: UserService) { }
   showSpinner:boolean = false
   ngOnInit() {
     this.showSpinner=true;
