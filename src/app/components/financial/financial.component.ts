@@ -20,6 +20,7 @@ export class FinancialComponent implements OnInit {
   loading = false;
   submitted = false;
   financeList;
+  message="";
 
   constructor(
       private formBuilder: FormBuilder,
@@ -60,9 +61,10 @@ export class FinancialComponent implements OnInit {
       this.jobs.postFinance(this.registerForm.value).subscribe(res=>{
         this.showSpinner=true;
         this.getList();
-        this.closeAdd.nativeElement.click()
+        this.closeAdd.nativeElement.click();
+        this.message="Details Posted Successfully!!!"
+        setTimeout(()=>{this.message="";},3000);
       })
-      console.log("Register", this.registerForm.value)
   }
 
 

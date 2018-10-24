@@ -17,6 +17,7 @@ export class EmploymentComponent implements OnInit {
   public jobList;
   public jobListCopy;
   searchString;
+  message="";
   ngOnInit() {
 
     this.getList();
@@ -65,14 +66,13 @@ export class EmploymentComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
-      console.log("Register", this.registerForm.value)
       this.jobs.postJob(this.registerForm.value).subscribe(res=>{
         this.showSpinner=true;
         this.getList();
         this.closeAdd.nativeElement.click();
-        //this.closeModal();
+        this.message="Job Posted Successfully!!!"
+        setTimeout(()=>{this.message="";},3000);
       })
-
     }
 
     display:any="none";
@@ -106,7 +106,7 @@ export class EmploymentComponent implements OnInit {
     public autoHide: boolean = false;
     public config: PaginationInstance = {
         id: 'advanced',
-        itemsPerPage: 5,
+        itemsPerPage: 9,
         currentPage: 1
     };
     public labels: any = {

@@ -201,5 +201,5 @@
     </div>
 
 
-
+    <div id="snackbar" *ngIf="message" [ngClass]="{'show': message.length>0}">{{message}}</div>
 

@@ -14,6 +14,7 @@ export class MatrimonalComponent implements OnInit {
   brideForm;
   bridesCopy;
   brides;
+  message="";
   constructor(private formBuilder:FormBuilder, private jobs:JobsService) { }
 
   ngOnInit() {
@@ -85,11 +86,12 @@ getList(){
       if (this.brideForm.invalid) {
           return;
       }
-      console.log("Register", this.brideForm.value)
       this.jobs.matrimony(this.brideForm.value).subscribe(res=>{
         this.showSpinner=true;
         this.postBride();
         this.getList();
+        this.message="Details Posted Successfully!!!"
+        setTimeout(()=>{this.message="";},3000);
       })
     }
 
