@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
 
     userCreated:boolean = false;
     showSpinner:boolean = false;
-    errors;
+    errors="";
     onSubmit() {
         this.submitted = true;
         if (this.registerForm.invalid) {
@@ -64,10 +64,11 @@ export class RegisterComponent implements OnInit {
                     this.userCreated=false
                 },4000);
             }
-        },error =>{
+        }
+        ,error =>{
             this.showSpinner = false;
-            this.errors =<any>error;
-            let errorJson = JSON.parse(this.errors.json());
+            let errors =error.json();
+            this.errors= errors.ErrorMessage;
         })
     }
 }
