@@ -36,12 +36,9 @@
             <li><a href="#">Refer a Member</a></li>
           </ul>
         </li> -->
-        <!-- <li *ngIf="this.user.name" class="menu-has-children"><a href="">
-          <i style="padding-right:6px" class="fa fa-user"></i>{{this.user.name}}</a>
-          <ul>
-            <li><a routerLink="/home" routerLinkActive="menu-active"></a>Logout</li>
-          </ul>
-        </li> -->
+        <li *ngIf="this.user.firstName==undefined || this.user.firstName==null">
+          <button class="top-login" routerLink="/login" routerLinkActive="menu-active">Login</button>
+        </li>
         <li *ngIf="this.user.firstName" class="menu-has-children"><a href="">{{user.firstName}}</a>
           <ul>
             <li><a routerLink="/changePwd" routerLinkActive="menu-active">Change Password</a></li>
