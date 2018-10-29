@@ -1,12 +1,4 @@
-/*
-  Theme Name: BizPage
-  Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
+
 @import  '../lib/bootstrap/css/bootstrap.css';
 @import  '../lib/font-awesome/css/font-awesome.css';
 @import  '../lib/animate/animate.css';
@@ -857,7 +849,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio .portfolio-item {
   position: relative;
-  height: 360px;
+  height: 280px;
   overflow: hidden;
 }
 
